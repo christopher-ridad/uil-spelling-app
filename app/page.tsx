@@ -2,7 +2,7 @@ import { FeatureButton } from '../components'
 
 export default function Home() {
     return (
-        <main>
+        <main className="button-container">
             <FeatureButton
                 color="red"
             >
