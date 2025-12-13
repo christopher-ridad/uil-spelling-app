@@ -1,0 +1,31 @@
+.feature-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.feature-button.red {
+  background-color: red;
+}
+
+.feature-button.blue {
+  background-color: blue;
+}
+
+.feature-button.green {
+  background-color: green;
+}
+
+.feature-button.yellow {
+  background-color: yellow;
+}
+
+.feature-button.pink {
+  background-color: pink;
+}
+
+.feature-button.orange {
+  background-color: orange;
+}
