@@ -1,4 +1,5 @@
 import { FeatureButton } from '../components'
+import { AudioButton } from '../components'
 
 export default function Home() {
     return (
@@ -33,6 +34,9 @@ export default function Home() {
             >
                 Feature
             </FeatureButton>
-        </main>
+            <AudioButton>
+              
+            </AudioButton>
+        </main>          
     )
 }
