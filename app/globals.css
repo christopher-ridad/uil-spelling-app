@@ -1,5 +1,37 @@
 @import "tailwindcss";
 
+.header-box{
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: right;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.header-box.blue{
+  background-color: blue;
+}
+
+.header-box.red{
+  background-color: red;
+}
+
+.header-box.green{
+  background-color: green;
+}
+
+.header-box.yellow{
+  background-color: yellow;
+}
+
+.header-box.pink{
+  background-color: pink;
+}
+
+.header-box.orange{
+  background-color: orange;
+}
+
 .button-container {
   display: flex;
   flex-wrap: wrap;

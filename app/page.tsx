@@ -1,42 +1,16 @@
-import { FeatureButton } from '../components'
-import { AudioButton } from '../components'
+import { FeatureButtonGrid } from '../components'
+import { AudioButton , HeaderBox} from '../components'
 
 export default function Home() {
     return (
-        <main className="button-container">
-            <FeatureButton
-                color="red"
-            >
-                Feature
-            </FeatureButton>
-            <FeatureButton
-                color="blue"
-            >
-                Feature
-            </FeatureButton>
-            <FeatureButton
-                color="green"
-            >
-                Feature
-            </FeatureButton>
-            <FeatureButton
-                color="yellow"
-            >
-                Feature
-            </FeatureButton>
-            <FeatureButton
-                color="pink"
-            >
-                Feature
-            </FeatureButton>
-            <FeatureButton
-                color="orange"
-            >
-                Feature
-            </FeatureButton>
-            <AudioButton>
-              
-            </AudioButton>
-        </main>          
+        <main>
+            <HeaderBox color="blue" headerText="Text here" />
+            <HeaderBox color="red" headerText="Text here" />
+            <HeaderBox color="green" headerText="Text here" />
+            <HeaderBox color="yellow" headerText="Text here" />
+            <HeaderBox color="pink" headerText="Text here" />
+            <HeaderBox color="orange" headerText="Text here" />
+        </main>
+        
     )
 }

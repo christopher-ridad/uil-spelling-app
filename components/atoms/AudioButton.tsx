@@ -2,9 +2,13 @@
 
 import { Volume2 } from 'lucide-react'
 
-export default function AudioButton() {
+interface AudioButtonProps {
+    color: string
+}
+
+export default function AudioButton({ color }: AudioButtonProps) {
     return (
-        <button className="bg-blue-600 text-white rounded-full w-24 h-24 flex items-center justify-center"> 
+        <button className={`${color} text-white rounded-full w-24 h-24 flex items-center justify-center`}> 
             <Volume2 className="w-12 h-12" />
         </button>
     )

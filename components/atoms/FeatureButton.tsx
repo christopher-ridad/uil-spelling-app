@@ -3,16 +3,16 @@
 interface FeatureButtonProps {
     color: string
     onClick?: () => void
-    children: React.ReactNode
+    buttonText: string
 }
 
-export default function FeatureButton({ color, onClick, children }: FeatureButtonProps) {
+export default function FeatureButton({ color, onClick, buttonText }: FeatureButtonProps) {
     return (
         <button
             onClick={onClick}
             className={`feature-button ${color}`}
         >
-            {children}
+            {buttonText}
         </button>
     )
 }
