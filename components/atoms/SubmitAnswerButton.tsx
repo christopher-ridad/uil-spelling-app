@@ -4,14 +4,15 @@ interface SubmitAnswerButtonProps {
     buttonText: string,
     onClick?: () => void,
     color: string
+    hoverColor: string
 }
 
-export default function SubmitAnswerButton({ buttonText, onClick, color }: SubmitAnswerButtonProps) {
+export default function SubmitAnswerButton({ buttonText, onClick, color, hoverColor }: SubmitAnswerButtonProps) {
   return (
     <button
             onClick={onClick}
-            className={`submit-answer-button ${color}`}
-            type="submit"
+            className={`flex-1 text-white cursor-pointer font-semibold my-5 w-full px-6 py-4 rounded-lg transition-colors ${color} ${hoverColor}`}
+            type="submit"              
         >
             {buttonText}
         </button>

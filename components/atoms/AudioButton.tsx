@@ -8,7 +8,7 @@ interface AudioButtonProps {
 
 export default function AudioButton({ color }: AudioButtonProps) {
     return (
-        <button className={`${color} text-white rounded-full w-24 h-24 flex items-center justify-center`}> 
+        <button className={`${color} mx-auto my-6 text-white rounded-full w-24 h-24 flex items-center justify-center`}> 
             <Volume2 className="w-12 h-12" />
         </button>
     )
