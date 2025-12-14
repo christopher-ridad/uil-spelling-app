@@ -1,9 +1,9 @@
 import { COLORS } from '../../lib/colors'
-import { WordCardFront } from '../../components'
+import { MisspellCardFront } from '../../components'
 
 export default function SpellingPage() {
     return (
-        <WordCardFront
+        <MisspellCardFront
             color={COLORS.pink.bg}
             colorDark={COLORS.pink.bgDark}
             colorHover={COLORS.pink.bgHover}

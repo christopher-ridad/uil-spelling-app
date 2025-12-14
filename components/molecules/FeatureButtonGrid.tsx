@@ -7,7 +7,7 @@ import FeatureButton from '../atoms/FeatureButton'
 
 export default function FeatureButtonGrid() {
     return (
-        <main className="button-container">
+        <main className="flex flex-wrap gap-4 p-4">
             <FeatureButton
                 color={COLORS.blue.bg}
                 hoverColor={COLORS.blue.bgHover}
@@ -39,7 +39,7 @@ export default function FeatureButtonGrid() {
                 color={COLORS.pink.bg}
                 hoverColor={COLORS.pink.bgHover}
                 buttonText="Feature"
-                href="/mispelled"
+                href="/misspelled"
             />
             
             <FeatureButton
