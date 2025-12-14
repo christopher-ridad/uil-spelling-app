@@ -1,5 +1,5 @@
 import FeatureButton from './FeatureButton'
 import AudioButton from './AudioButton'
-import HeaderBox from './HeaderBox'
+import ScoreDisplay from './ScoreDisplay'
 
-export { FeatureButton, AudioButton, HeaderBox }
+export { FeatureButton, AudioButton, ScoreDisplay }

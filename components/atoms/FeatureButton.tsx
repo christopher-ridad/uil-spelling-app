@@ -14,5 +14,5 @@ export default function FeatureButton({ color, onClick, buttonText }: FeatureBut
         >
             {buttonText}
         </button>
-    )
+    ) 
 }

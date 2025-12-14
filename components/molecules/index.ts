@@ -1,3 +1,4 @@
+import CardHeader from './CardHeader'
 import FeatureButtonGrid from './FeatureButtonGrid'
 
-export { FeatureButtonGrid }
+export { FeatureButtonGrid, CardHeader }

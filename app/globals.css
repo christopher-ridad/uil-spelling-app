@@ -1,35 +1,99 @@
 @import "tailwindcss";
 
-.header-box{
+* {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.card-header{
   max-width: 42rem;
-  margin-left: auto;
-  margin-right: right;
   color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header.blue{
+  background-color: var(--color-blue-600);
+}
+
+.card-header.red{
+  background-color: var(--color-red-600);
+}
+
+.card-header.green{
+  background-color: var(--color-green-600);
+}
+
+.card-header.yellow{
+  background-color: var(--color-yellow-500);
+}
+
+.card-header.pink{
+  background-color: var(--color-pink-600);
+}
+
+.card-header.orange{
+  background-color: var(--color-orange-600);
+}
+
+.score-display.blue{
+  background-color: var(--color-blue-700);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
 }
 
-.header-box.blue{
-  background-color: blue;
+.score-display.red{
+  background-color: var(--color-red-700);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
 }
 
-.header-box.red{
-  background-color: red;
+.score-display.green{
+  background-color: var(--color-green-700);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
 }
 
-.header-box.green{
-  background-color: green;
+.score-display.yellow{
+  background-color: var(--color-yellow-600);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
 }
 
-.header-box.yellow{
-  background-color: yellow;
+.score-display.pink{
+  background-color: var(--color-pink-700);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
 }
 
-.header-box.pink{
-  background-color: pink;
-}
-
-.header-box.orange{
-  background-color: orange;
+.score-display.orange{
+  background-color: var(--color-orange-700);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
 }
 
 .button-container {
