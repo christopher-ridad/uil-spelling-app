@@ -1,14 +1,19 @@
 'use client'
 
 interface SubmitAnswerButtonProps {
-    id: string
-    buttonText: string
+    buttonText: string,
+    onClick?: () => void,
+    color: string
 }
 
-export default function SubmitAnswerButton({ id, buttonText }: SubmitAnswerButtonProps) {
+export default function SubmitAnswerButton({ buttonText, onClick, color }: SubmitAnswerButtonProps) {
   return (
-    <button id={id} type="submit">
-      {buttonText}
-    </button>
+    <button
+            onClick={onClick}
+            className={`submit-answer-button ${color}`}
+            type="submit"
+        >
+            {buttonText}
+        </button>
   );
 }

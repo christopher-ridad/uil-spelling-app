@@ -13,7 +13,7 @@ interface CardHeaderProps{
 
 export default function CardHeader({ headerColor, scoreDisplayColor, headerText, correct, total }: CardHeaderProps) {
     return (
-        <header className={`card-header ${headerColor}`}>
+        <header className={`max-w-[42rem] text-white rounded-lg p-6 mb-6 shadow-lg font-bold text-xl flex justify-between items-center ${headerColor}`}>
             <span className="flex items-center justify-between gap-2">
                 <BookOpenIcon />
                 {headerText}
