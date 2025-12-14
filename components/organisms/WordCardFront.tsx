@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { COLORS } from '../../lib/colors'
 import AudioButton from '../atoms/AudioButton'
 import SubmitAnswerButton from '../atoms/SubmitAnswerButton'
 import CardHeader from '../molecules/CardHeader'
