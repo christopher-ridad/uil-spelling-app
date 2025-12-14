@@ -36,15 +36,15 @@ export default function WordCardFront({ color, colorDark, colorHover, colorFocus
                 total={score_total}
             />
             {/* Main Card */}
-            <div className="bg-white rounded-lg shadow-lg p-8 mb-4">
-                <div className="text-center mb-8">
+            <section className="bg-white rounded-lg shadow-lg p-8 mb-4">
+                <article className="text-center mb-8">
                     <p className="text-gray-600 mb-4">Listen to the word and spell it correctly</p>
                     
                     {/* Audio Button */}
-                    <AudioButton color={color} />
+                    <AudioButton color={color} colorHover={colorHover} />
                     
                     <p className="text-sm text-gray-500 mb-2">Word #{score_total}</p>
-                </div>
+                </article>
 
                 {/* Input Area */}
                 <SpellingInput
@@ -59,7 +59,7 @@ export default function WordCardFront({ color, colorDark, colorHover, colorFocus
                     hoverColor={colorHover}
                     buttonText="Submit Answer"
                 />
-            </div>
+            </section>
         </main>
     );
 }
