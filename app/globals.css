@@ -4,6 +4,21 @@
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+:root {
+  --color-background-blue: var(--color-blue-600);
+  --color-background-blue-dark: var(--color-blue-700);
+  --color-background-red: var(--color-red-600);
+  --color-background-red-dark: var(--color-red-700);
+  --color-background-green: var(--color-green-600);
+  --color-background-green-dark: var(--color-green-700);
+  --color-background-yellow: var(--color-yellow-500);
+  --color-background-yellow-dark: var(--color-yellow-600);
+  --color-background-pink: var(--color-pink-600);
+  --color-background-pink-dark: var(--color-pink-700);
+  --color-background-orange: var(--color-orange-500);
+  --color-background-orange-dark: var(--color-orange-600);
+}
+
 .card-header{
   max-width: 42rem;
   color: white;
@@ -19,31 +34,31 @@
 }
 
 .card-header.blue{
-  background-color: var(--color-blue-600);
+  background-color: var(--color-background-blue);
 }
 
 .card-header.red{
-  background-color: var(--color-red-600);
+  background-color: var(--color-background-red);
 }
 
 .card-header.green{
-  background-color: var(--color-green-600);
+  background-color: var(--color-background-green);
 }
 
 .card-header.yellow{
-  background-color: var(--color-yellow-500);
+  background-color: var(--color-background-yellow);
 }
 
 .card-header.pink{
-  background-color: var(--color-pink-600);
+  background-color: var(--color-background-pink);
 }
 
 .card-header.orange{
-  background-color: var(--color-orange-600);
+  background-color: var(--color-background-orange);
 }
 
 .score-display.blue{
-  background-color: var(--color-blue-700);
+  background-color: var(--color-background-blue-dark);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -52,7 +67,7 @@
 }
 
 .score-display.red{
-  background-color: var(--color-red-700);
+  background-color: var(--color-background-red-dark);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -61,7 +76,7 @@
 }
 
 .score-display.green{
-  background-color: var(--color-green-700);
+  background-color: var(--color-background-green-dark);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -70,7 +85,7 @@
 }
 
 .score-display.yellow{
-  background-color: var(--color-yellow-600);
+  background-color: var(--color-background-yellow-dark);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -79,7 +94,7 @@
 }
 
 .score-display.pink{
-  background-color: var(--color-pink-700);
+  background-color: var(--color-background-pink-dark);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -88,7 +103,7 @@
 }
 
 .score-display.orange{
-  background-color: var(--color-orange-700);
+  background-color: var(--color-background-orange-dark);
   display: flex;
   align-items: center;
   gap: 0.5rem;
