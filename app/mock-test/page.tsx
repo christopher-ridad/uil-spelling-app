@@ -1,16 +1,13 @@
 import { COLORS } from '../../lib/colors'
-import { WordCardFront } from '../../components'
+import { WordCardBack } from '../../components'
 
 export default function SpellingPage() {
     return (
-        <WordCardFront
-            color={COLORS.orange.bg}
-            colorDark={COLORS.orange.bgDark}
-            colorHover={COLORS.orange.bgHover}
-            colorFocus={COLORS.orange.bgFocus}
-            headerText="UIL Spelling Practice"
-            score_correct={12}
-            score_total={15}
+        <WordCardBack
+            word={"zoot suit"}
+            definition={"a flamboyant men's suit from the 1930s-40s with oversized jackets, wide padded shoulders, and high-waisted, baggy trousers that taper to tight cuffs"}
+            example={"He is wearing a nice zoot suit."}
+            partOfSpeech={"noun"}
         />
     )
 }

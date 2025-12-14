@@ -1,4 +1,5 @@
 import WordCardFront from './WordCardFront'
 import MisspellCardFront from './MisspellCardFront'
+import WordCardBack from './WordCardBack'
 
-export { WordCardFront, MisspellCardFront }
+export { WordCardFront, MisspellCardFront, WordCardBack }
