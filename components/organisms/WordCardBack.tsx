@@ -12,21 +12,24 @@ interface WordCardBackProps {
     definition: string
     example?: string
     partOfSpeech?: string
+    colorText: string
+    colorBorder: string
+    colorBorder2: string
+    colorLight: string
 }
 
-export default function WordCardFront({ word, definition, example, partOfSpeech }: WordCardBackProps) {
+export default function WordCardFront({ word, definition, example, partOfSpeech, colorText, colorBorder, colorBorder2, colorLight }: WordCardBackProps) {
     const [userInput, setUserInput] = useState('');
-    //const [score, setScore] = useState({ correct: 12, total: 15 });
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserInput(e.target.value);
     };
 
     return (
-        <main className="bg-blue-50 border-2 border-blue-300 rounded-lg p-8 shadow-lg">
+        <main className={`${colorLight} ${colorBorder} border-2 rounded-lg p-8 shadow-lg`}>
             {/* Word + part of speech */}
             <article className="mb-6">
-                <Word word={word}/>
+                <Word word={word} color={colorText}/>
                 {partOfSpeech && (
                     <PartOfSpeech partOfSpeech={partOfSpeech} />
                 )}
@@ -37,7 +40,7 @@ export default function WordCardFront({ word, definition, example, partOfSpeech 
 
             {/* Example (if provided) */}
             {example && (
-                <Example example={example}/>
+                <Example example={example} colorBorder={colorBorder2}/>
             )}
         </main>
     );

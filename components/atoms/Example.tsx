@@ -2,11 +2,12 @@
 
 interface ExampleProps {
     example: string
+    colorBorder: string
 }
 
-export default function Example({ example }: ExampleProps) {
+export default function Example({ example, colorBorder }: ExampleProps) {
     return (
-        <article className="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+        <article className={`bg-white p-4 rounded-lg border-l-4 ${colorBorder}`}>
             <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">
                 Example Usage
             </h3>
