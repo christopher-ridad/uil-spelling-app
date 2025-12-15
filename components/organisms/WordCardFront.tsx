@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import AudioButton from '../atoms/AudioButton'
+import FeedbackMessage from '../atoms/FeedbackMessage'
 import SubmitAnswerButton from '../atoms/SubmitAnswerButton'
 import SpellingInput from '../molecules/SpellingInput'
 
@@ -16,30 +17,47 @@ interface WordCardFrontProps {
 }
 
 export default function WordCardFront({ color, colorHover, colorFocus, word, onSubmit }: WordCardFrontProps) {
-    const [userInput, setUserInput] = useState('');
+    const [userAnswer, setUserAnswer] = useState('');
+    const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null)
+    const [hasSubmitted, setHasSubmitted] = useState(false)
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUserInput(e.target.value);
-    };
+    const handleSubmit = () => {
+        if (!userAnswer.trim()) return
+
+        const isCorrect = userAnswer.trim() == word
+
+        setFeedback(isCorrect ? 'correct' : 'incorrect')
+        setHasSubmitted(true)
+        onSubmit()
+    }
+
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter' && !hasSubmitted) {
+            handleSubmit()
+        }
+    }
 
     return (
         <section className="max-w-2xl mx-auto">
             {/* Main Card */}
             <section className="bg-white rounded-lg shadow-lg p-8 mb-4">
                 <article className="text-center mb-8">
-                    <p className="text-gray-600 mb-4">Listen to the word and spell it correctly</p>
+                    <p className="text-black mb-4">Listen to the word and spell it correctly</p>
                     
                     {/* Audio Button */}
                     <AudioButton color={color} colorHover={colorHover} word={word} />
                     
-                    <p className="text-sm text-gray-500 mb-2">Word #{1}</p>
+                    <p className="text-sm text-black mb-2">Word #{1}</p>
+
+                    <FeedbackMessage feedback={feedback} />
                 </article>
 
                 {/* Input Area */}
                 <SpellingInput
                 colorFocus={colorFocus}
-                value={userInput}
-                onChange={handleInputChange}
+                value={userAnswer}
+                onChange={(e) => setUserAnswer(e.target.value)}
+                onKeyPress={handleKeyPress}
                 />
 
                 {/* Submit Button */}
@@ -47,7 +65,7 @@ export default function WordCardFront({ color, colorHover, colorFocus, word, onS
                     color={color}
                     hoverColor={colorHover}
                     buttonText="Submit Answer"
-                    onClick={onSubmit}
+                    onClick={handleSubmit}
                 />
             </section>
         </section>

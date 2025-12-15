@@ -18,6 +18,7 @@ interface FlippableSpellingCardProps {
     score_correct: number
     score_total: number
     word: string
+    onCorrect: () => void 
     definition: string
     partOfSpeech?: string
     example?: string
@@ -36,6 +37,7 @@ export default function FlippableSpellingCard({
     score_correct, 
     score_total,
     word,
+    onCorrect,
     definition,
     partOfSpeech,
     example
