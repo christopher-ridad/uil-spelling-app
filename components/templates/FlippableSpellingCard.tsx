@@ -14,7 +14,7 @@ interface FlippableSpellingCardProps {
     colorBorder: string
     colorBorder2: string
     colorLight: string
-    headerText?: string
+    headerText: string
     score_correct: number
     score_total: number
     word: string
