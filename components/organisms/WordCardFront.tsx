@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import AudioButton from '../atoms/AudioButton'
+import Word from '../atoms/Word'
 import FeedbackMessage from '../atoms/FeedbackMessage'
 import SubmitAnswerButton from '../atoms/SubmitAnswerButton'
 import SpellingInput from '../molecules/SpellingInput'
@@ -10,13 +11,14 @@ interface WordCardFrontProps {
     color: string
     colorHover: string
     colorFocus: string
+    colorText: string
     word: string
     score_correct: number
     score_total: number
     onSubmit: () => void
 }
 
-export default function WordCardFront({ color, colorHover, colorFocus, word, onSubmit }: WordCardFrontProps) {
+export default function WordCardFront({ color, colorHover, colorFocus, colorText, word, onSubmit }: WordCardFrontProps) {
     const [userAnswer, setUserAnswer] = useState('');
     const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null)
     const [hasSubmitted, setHasSubmitted] = useState(false)
@@ -47,7 +49,14 @@ export default function WordCardFront({ color, colorHover, colorFocus, word, onS
                     {/* Audio Button */}
                     <AudioButton color={color} colorHover={colorHover} word={word} />
                     
-                    <p className="text-sm text-black mb-2">Word #{1}</p>
+                    {feedback ? (
+                        <Word color={colorText} word={word} />
+                    ) : (
+                        <p className="text-xl text-black mb-2">
+                            Word #{1}
+                        </p>
+                    )}
+
 
                     <FeedbackMessage feedback={feedback} />
                 </article>

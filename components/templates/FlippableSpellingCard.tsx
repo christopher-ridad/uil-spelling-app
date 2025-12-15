@@ -89,6 +89,7 @@ export default function FlippableSpellingCard({
                             color={color}
                             colorHover={colorHover}
                             colorFocus={colorFocus}
+                            colorText={colorText}
                             word={word}
                             score_correct={score_correct}
                             score_total={score_total}

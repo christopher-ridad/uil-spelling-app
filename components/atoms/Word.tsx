@@ -1,11 +1,11 @@
 'use client'
 
-interface WordDisplayProps {
+interface WordProps {
     word: string
     color: string
 }
 
-export default function WordDisplay({ word , color }: WordDisplayProps) {
+export default function Word({ word , color }: WordProps) {
     return (
         <h2 className={`text-3xl font-bold ${color} mb-2 font-mono`}>
             {word}
