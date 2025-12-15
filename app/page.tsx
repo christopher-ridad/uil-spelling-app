@@ -1,6 +1,6 @@
 'use client'
 
-import { PracticeModeBox } from '../components'
+import { PracticeModeBox, NavBar } from '../components'
 import { useState } from 'react'
 
 export default function Home() {
@@ -10,7 +10,8 @@ export default function Home() {
     setUserInput(e.target.value);
   };
     return (
-      <div className="min-h-screen bg-gradient-to-br from-violet-600 via-purple-600 to-pink-500">
+      <div className="space-y-6 min-h-screen bg-gradient-to-br from-violet-600 via-purple-600 to-pink-500">
+        <NavBar />
         <PracticeModeBox />
       </div>
     )

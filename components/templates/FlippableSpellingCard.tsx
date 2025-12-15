@@ -54,7 +54,7 @@ export default function FlippableSpellingCard({
     };
 
     return (
-        <main className="max-w-2xl mx-auto">
+        <main className="max-w-2xl w-full">
             {/* Header */}
             <CardHeader 
                 headerColor={color}
