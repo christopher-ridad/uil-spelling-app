@@ -9,13 +9,13 @@ interface WordCardFrontProps {
     color: string
     colorHover: string
     colorFocus: string
-    headerText?: string
+    word: string
     score_correct: number
     score_total: number
     onSubmit: () => void
 }
 
-export default function WordCardFront({ color, colorHover, colorFocus, onSubmit }: WordCardFrontProps) {
+export default function WordCardFront({ color, colorHover, colorFocus, word, onSubmit }: WordCardFrontProps) {
     const [userInput, setUserInput] = useState('');
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,7 +30,7 @@ export default function WordCardFront({ color, colorHover, colorFocus, onSubmit 
                     <p className="text-gray-600 mb-4">Listen to the word and spell it correctly</p>
                     
                     {/* Audio Button */}
-                    <AudioButton color={color} colorHover={colorHover} />
+                    <AudioButton color={color} colorHover={colorHover} word={word} />
                     
                     <p className="text-sm text-gray-500 mb-2">Word #{1}</p>
                 </article>
