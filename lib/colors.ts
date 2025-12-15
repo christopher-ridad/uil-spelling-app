@@ -7,7 +7,9 @@ export const COLORS = {
     bgFocus: 'focus:border-blue-600',
     bgText: 'text-blue-600',
     bgBorder: 'border-blue-300',
-    bgBorder2: 'border-blue-500'
+    bgBorder2: 'border-blue-500',
+    bgTransitionFrom: 'from-blue-500',
+    bgTransitionTo: 'to-cyan-500'
   },
   red: {
     bg: 'bg-red-600',
@@ -17,7 +19,9 @@ export const COLORS = {
     bgFocus: 'focus:border-red-600',
     bgText: 'text-red-600',
     bgBorder: 'border-red-300',
-    bgBorder2: 'border-red-500'
+    bgBorder2: 'border-red-500',
+    bgTransitionFrom: 'from-red-500',
+    bgTransitionTo: 'to-pink-500'
   },
   green: {
     bg: 'bg-green-600',
@@ -27,7 +31,9 @@ export const COLORS = {
     bgFocus: 'focus:border-green-600',
     bgText: 'text-green-600',
     bgBorder: 'border-green-300',
-    bgBorder2: 'border-green-500'
+    bgBorder2: 'border-green-500',
+    bgTransitionFrom: 'from-green-500',
+    bgTransitionTo: 'to-teal-500'
     
   },
    yellow: {
@@ -38,7 +44,9 @@ export const COLORS = {
     bgFocus: 'focus:border-yellow-500',
     bgText: 'text-yellow-500',
     bgBorder: 'border-yellow-300',
-    bgBorder2: 'border-yellow-500'
+    bgBorder2: 'border-yellow-500',
+    bgTransitionFrom: 'from-yellow-500',
+    bgTransitionTo: 'to-orange-500'
   },
   pink: {
     bg: 'bg-pink-600',

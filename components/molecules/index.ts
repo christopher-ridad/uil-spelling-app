@@ -1,5 +1,5 @@
 import CardHeader from './CardHeader'
-import FeatureButtonGrid from './FeatureButtonGrid'
+import PracticeModeGrid from './PracticeModeGrid'
 import SpellingInput from './SpellingInput'
 
-export { FeatureButtonGrid, CardHeader, SpellingInput }
+export { PracticeModeGrid, CardHeader, SpellingInput }

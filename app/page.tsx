@@ -1,7 +1,6 @@
 'use client'
 
-import { COLORS } from '../lib/colors'
-import { FeatureButtonGrid, WordCardFront } from '../components'
+import { PracticeModeBox } from '../components'
 import { useState } from 'react'
 
 export default function Home() {
@@ -11,6 +10,8 @@ export default function Home() {
     setUserInput(e.target.value);
   };
     return (
-        <FeatureButtonGrid />
+      <div className="min-h-screen bg-gradient-to-br from-violet-600 via-purple-600 to-pink-500">
+        <PracticeModeBox />
+      </div>
     )
 }

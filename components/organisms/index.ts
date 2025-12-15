@@ -1,6 +1,6 @@
 import WordCardFront from './WordCardFront'
 import MisspellCardFront from './MisspellCardFront'
 import WordCardBack from './WordCardBack'
-import FlippableSpellingCard from './FlippableSpellingCard'
+import PracticeModeBox from './PracticeModeBox'
 
-export { WordCardFront, MisspellCardFront, WordCardBack, FlippableSpellingCard }
+export { WordCardFront, MisspellCardFront, WordCardBack, PracticeModeBox }

@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import CardHeader from '../molecules/CardHeader'
-import WordCardFront from './WordCardFront'
-import WordCardBack from './WordCardBack'
+import WordCardFront from '../organisms/WordCardFront'
+import WordCardBack from '../organisms/WordCardBack'
 
 interface FlippableSpellingCardProps {
     color: string
