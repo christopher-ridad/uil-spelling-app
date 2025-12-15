@@ -32,7 +32,7 @@ export default function FlippableSpellingCard({
     colorBorder,
     colorBorder2,
     colorLight,
-    headerText="UIL Spelling Test", 
+    headerText, 
     score_correct, 
     score_total,
     word,
@@ -54,7 +54,7 @@ export default function FlippableSpellingCard({
     };
 
     return (
-        <main className="max-w-2xl w-full">
+        <section className="max-w-2xl w-full">
             {/* Header */}
             <CardHeader 
                 headerColor={color}
@@ -127,6 +127,6 @@ export default function FlippableSpellingCard({
                     </figure>
                 </article>
             </section>
-        </main>
+        </section>
     );
 }

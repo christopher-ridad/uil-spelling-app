@@ -25,7 +25,7 @@ export default function MisspellCardFront({ color, colorDark, colorHover, colorF
     };
 
     return (
-        <main className="max-w-2xl mx-auto">
+        <section className="max-w-2xl w-full">
             {/* Header */}
             <CardHeader 
                 headerColor={color}
@@ -57,6 +57,6 @@ export default function MisspellCardFront({ color, colorDark, colorHover, colorF
                     buttonText="Submit Answer"
                 />
             </section>
-        </main>
+        </section>
     );
 }

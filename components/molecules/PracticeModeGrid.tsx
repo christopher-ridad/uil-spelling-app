@@ -29,7 +29,7 @@ export default function PracticeModeGrid() {
                 toColor={COLORS.green.bgTransitionTo}
                 buttonText="Word Lists"
                 subText="Identify the misspelled word"
-                href="/mock-spelling"
+                href="/word-lists"
             />
 
             <PracticeMode
@@ -37,7 +37,7 @@ export default function PracticeModeGrid() {
                 toColor={COLORS.yellow.bgTransitionTo}
                 buttonText="Practice Test"
                 subText="Timed mode"
-                href="/mock-vocab"
+                href="/mock-test"
             />
         </main>      
     )

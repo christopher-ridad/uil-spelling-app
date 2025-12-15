@@ -26,7 +26,7 @@ export default function WordCardFront({ word, definition, example, partOfSpeech,
     };
 
     return (
-        <main className={`${colorLight} ${colorBorder} border-2 rounded-lg p-8 shadow-lg`}>
+        <section className={`${colorLight} ${colorBorder} border-2 rounded-lg p-8 shadow-lg`}>
             {/* Word + part of speech */}
             <article className="mb-6">
                 <Word word={word} color={colorText}/>
@@ -42,6 +42,6 @@ export default function WordCardFront({ word, definition, example, partOfSpeech,
             {example && (
                 <Example example={example} colorBorder={colorBorder2}/>
             )}
-        </main>
+        </section>
     );
 }

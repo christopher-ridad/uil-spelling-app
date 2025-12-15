@@ -3,7 +3,7 @@ import { FlippableSpellingCard } from '../../components'
 
 export default function SpellingPage() {
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-600 to-cyan-500">
+        <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-600 to-cyan-500">
             <FlippableSpellingCard
                 color={COLORS.blue.bg}
                 colorDark={COLORS.blue.bgDark}
@@ -13,7 +13,7 @@ export default function SpellingPage() {
                 colorBorder={COLORS.blue.bgBorder}
                 colorBorder2={COLORS.blue.bgBorder2}
                 colorLight={COLORS.blue.bgLight}
-                headerText="UIL Spelling Practice"
+                headerText="Spelling Practice"
                 score_correct={12}
                 score_total={15}
                 word={"zoot suit"}
@@ -21,6 +21,6 @@ export default function SpellingPage() {
                 example={"He is wearing a nice zoot suit."}
                 partOfSpeech={"noun"}
             />
-        </div>
+        </main>
     )
 }

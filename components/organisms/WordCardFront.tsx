@@ -23,7 +23,7 @@ export default function WordCardFront({ color, colorHover, colorFocus, onSubmit 
     };
 
     return (
-        <main className="max-w-2xl mx-auto">
+        <section className="max-w-2xl mx-auto">
             {/* Main Card */}
             <section className="bg-white rounded-lg shadow-lg p-8 mb-4">
                 <article className="text-center mb-8">
@@ -50,6 +50,6 @@ export default function WordCardFront({ color, colorHover, colorFocus, onSubmit 
                     onClick={onSubmit}
                 />
             </section>
-        </main>
+        </section>
     );
 }
