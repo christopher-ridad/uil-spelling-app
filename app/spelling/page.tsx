@@ -4,24 +4,35 @@ import { useState, useEffect } from 'react'
 import { COLORS } from '../../lib/colors'
 import { FlippableSpellingCard } from '../../components'
 
+interface WordData {
+    word: string
+    definition: string | null
+    partOfSpeech: string | null
+    example: string | null
+    source?: string
+}
+
 export default function SpellingPage() {
-    const [currentWord, setCurrentWord] = useState('')
+    const [currentWord, setCurrentWord] = useState<WordData | null>(null)
     const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        // fetch words on mount
-        fetch('/api/words')
+    const loadRandomWord = () => {
+        setLoading(true)
+        fetch('/api/words?random=true')
         .then(res => res.json())
         .then(data => {
-            // pick a random word
-            const randomWord = data.words[Math.floor(Math.random() * data.words.length)]
-            setCurrentWord(randomWord)
+            console.log('Loaded word:', data)
+            setCurrentWord(data)
             setLoading(false)
         })
         .catch(err => {
-            console.error('Error:', err)
+            console.error('Error loading word:', err)
             setLoading(false)
         })
+    }
+
+    useEffect(() => {
+        loadRandomWord()
     }, [])
   
     // will fix this later
@@ -43,8 +54,8 @@ export default function SpellingPage() {
                 headerText="Spelling Practice"
                 score_correct={0}
                 score_total={1}
-                word={currentWord}
-                definition="Definitions coming soon."
+                word={currentWord.word}
+                definition={currentWord.definition}
                 example="Examples will come later."
                 partOfSpeech="noun"
             />

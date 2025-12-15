@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "parse-pdf": "node scripts/parsePDF.js"
+    "parse-pdf": "node scripts/parsePDF.js",
+    "fetch-definitions": "node scripts/fetchDefinitions.js"
   },
   "dependencies": {
+    "axios": "^1.13.2",
+    "cheerio": "^1.1.2",
     "lucide-react": "^0.561.0",
     "next": "16.0.10",
     "pdfjs-dist": "^3.11.174",
