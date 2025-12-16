@@ -16,21 +16,21 @@ export default function StatsWidgetGrid({}) {
             <StatsInfoWidget
                 fromColor={COLORS.green.bgTransitionFrom}
                 toColor={COLORS.green.bgTransitionTo2}
-                title="Words Practiced"
+                title="Accuracy"
                 stats="87%"
                 subStats="+5% from last week ⬆️"
             />
             <StatsInfoWidget
                 fromColor={COLORS.orange.bgTransitionFrom}
                 toColor={COLORS.orange.bgTransitionTo}
-                title="Words Practiced"
+                title="Current Streak"
                 stats="12"
                 subStats="+12 this week 🔥"
             />
             <StatsInfoWidget
                 fromColor={COLORS.pink.bgTransitionFrom}
                 toColor={COLORS.pink.bgTransitionTo}
-                title="Words Practiced"
+                title="Level"
                 stats="Advanced"
                 subStats="78% to Expert ⭐"
             />
