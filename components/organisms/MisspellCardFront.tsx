@@ -12,11 +12,30 @@ interface WordCardFrontProps {
     colorHover: string
     colorFocus: string
     headerText?: string
+    word1: string
+    word2: string
+    word3: string
+    word4: string
+    word5: string
     score_correct: number
     score_total: number
 }
 
-export default function MisspellCardFront({ color, colorDark, colorHover, colorFocus, headerText="UIL Spelling Test", score_correct, score_total }: WordCardFrontProps) {
+export default function MisspellCardFront({ 
+    color, 
+    colorDark, 
+    colorHover, 
+    colorFocus, 
+    headerText="UIL Spelling Test", 
+    word1,
+    word2,
+    word3,
+    word4,
+    word5,
+    score_correct, 
+    score_total 
+}: WordCardFrontProps) {
+
     const [userInput, setUserInput] = useState('');
     //const [score, setScore] = useState({ correct: 12, total: 15 });
 
@@ -39,7 +58,7 @@ export default function MisspellCardFront({ color, colorDark, colorHover, colorF
                 <article className="text-center mb-8">
                     
                     {/* Word Options */}
-                    <WordOptionList color={color} colorHover={colorHover} options={["ate", "eat", "tea", "eta", "ola"]}/>
+                    <WordOptionList color={color} colorHover={colorHover} options={[word1, word2, word3, word4, word5]}/>
                     
                 </article>
 
