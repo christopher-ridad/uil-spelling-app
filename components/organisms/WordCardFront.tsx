@@ -17,9 +17,19 @@ interface WordCardFrontProps {
     score_correct: number
     score_total: number
     onSubmit: () => void
+    onNext: () => void
 }
 
-export default function WordCardFront({ color, colorHover, colorFocus, colorText, word, onSubmit }: WordCardFrontProps) {
+export default function WordCardFront({ 
+    color, 
+    colorHover, 
+    colorFocus, 
+    colorText, 
+    word, 
+    onSubmit, 
+    onNext 
+}: WordCardFrontProps) {
+    
     const [userAnswer, setUserAnswer] = useState('');
     const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null)
     const [hasSubmitted, setHasSubmitted] = useState(false)
@@ -44,6 +54,7 @@ export default function WordCardFront({ color, colorHover, colorFocus, colorText
         setUserAnswer('')
         setFeedback(null)
         setHasSubmitted(false)
+        onNext()
     }
 
     return (
@@ -82,8 +93,7 @@ export default function WordCardFront({ color, colorHover, colorFocus, colorText
                     hoverColor={colorHover}
                     buttonText="Submit Answer"
                     onClick={handleSubmit}
-                />
-                            
+                />       
                 <NextArrow onClick={handleNext} visible={hasSubmitted} color={color} colorHover={colorHover}/>
             </section>
         </section>

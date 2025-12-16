@@ -19,6 +19,7 @@ export default function SpellingInput({
         <input
             type="text"
             value={value}
+            onClick={(e) => e.stopPropagation()}
             onChange={onChange}
             onKeyDown={onKeyPress}
             placeholder={placeholder}

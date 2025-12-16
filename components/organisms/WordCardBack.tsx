@@ -19,17 +19,29 @@ interface WordCardBackProps {
     colorBorder: string
     colorBorder2: string
     colorLight: string
+    onNext: () => void
 }
 
-export default function WordCardBack({ word, definition, example, partOfSpeech, color, colorHover, colorText, colorBorder, colorBorder2, colorLight }: WordCardBackProps) {
-    const [userInput, setUserInput] = useState('');
+export default function WordCardBack({ 
+    word, 
+    definition, 
+    example, 
+    partOfSpeech, 
+    color, 
+    colorHover, 
+    colorText, 
+    colorBorder, 
+    colorBorder2, 
+    colorLight, 
+    onNext 
+}: WordCardBackProps) {
 
     const handleNext = () => {
-        setUserInput('')
+        onNext();
     }
 
     return (
-        <section className={`${colorLight} ${colorBorder} border-2 rounded-lg p-8 shadow-lg`}>
+        <section className={`${colorLight} ${colorBorder} border-2 rounded-lg p-8 shadow-lg relative`}>
             {/* Word + part of speech */}
             <article className="mb-6">
                 <Word word={word} color={colorText}/>

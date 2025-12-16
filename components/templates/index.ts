@@ -1,3 +1,5 @@
 import FlippableSpellingCard from './FlippableSpellingCard'
+import VocabCard from './VocabCard'
 
-export { FlippableSpellingCard }
+
+export { FlippableSpellingCard, VocabCard }

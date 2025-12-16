@@ -1,26 +1,45 @@
-import { COLORS } from '../../lib/colors'
-import { FlippableSpellingCard } from '../../components'
+'use client'
 
-export default function SpellingPage() {
+import { useState } from 'react'
+import { COLORS } from '../../lib/colors'
+import { VocabCard } from '../../components'
+
+export default function VocabPage() {
+    const [currentWordIndex, setCurrentWordIndex] = useState(0);
+        const words = [
+            { word: 'example', definition: '...', partOfSpeech: 'noun', example: '...' },
+            { word: 'practice', definition: '...', partOfSpeech: 'noun', example: '...' },
+            // ... more words
+        ];
+    
+        const handleNext = () => {
+            setCurrentWordIndex((prev) => (prev + 1) % words.length); // Move to next word, loop back to start
+        };
+    
+        const currentWord = words[currentWordIndex];
+
     return (
         <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-red-500 to-red-300">
-            <FlippableSpellingCard
-                color={COLORS.red.bg}
-                colorDark={COLORS.red.bgDark}
-                colorHover={COLORS.red.bgHover}
-                colorFocus={COLORS.red.bgFocus}
-                colorText={COLORS.red.bgText}
-                colorBorder={COLORS.red.bgBorder}
-                colorBorder2={COLORS.red.bgBorder2}
-                colorLight={COLORS.red.bgLight}
-                headerText="Vocabulary Practice"
-                score_correct={12}
-                score_total={15}
-                word={"zoot suit"}
-                definition={"a flamboyant men's suit from the 1930s-40s with oversized jackets, wide padded shoulders, and high-waisted, baggy trousers that taper to tight cuffs"}
-                example={"He is wearing a nice zoot suit."}
-                partOfSpeech={"noun"}
-            />
+            <section className="max-w-2xl w-full px-4">
+                <VocabCard 
+                    key={currentWordIndex}
+                    headerText={"Vocab Practice"}
+                    word={currentWord.word}
+                    definition={currentWord.definition}
+                    partOfSpeech={currentWord.partOfSpeech}
+                    example={currentWord.example}
+                    color={COLORS.red.bg}
+                    colorDark={COLORS.red.bgDark}
+                    colorHover={COLORS.red.bgHover}
+                    colorText={COLORS.red.bgText}
+                    colorBorder={COLORS.red.bgBorder}
+                    colorBorder2={COLORS.red.bgBorder2}
+                    colorLight={COLORS.red.bgLight}
+                    score_correct={0}
+                    score_total={1}
+                    onNext={handleNext}
+                />
+            </section>
         </main>
     )
 }

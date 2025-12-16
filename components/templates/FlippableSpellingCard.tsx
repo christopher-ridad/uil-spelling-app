@@ -22,6 +22,7 @@ interface FlippableSpellingCardProps {
     definition: string
     partOfSpeech?: string
     example?: string
+    onNext: () => void
 }
 
 export default function FlippableSpellingCard({ 
@@ -39,7 +40,8 @@ export default function FlippableSpellingCard({
     word,
     definition,
     partOfSpeech,
-    example
+    example,
+    onNext
 }: FlippableSpellingCardProps) {
     const [hasSubmitted, setHasSubmitted] = useState(false);
     const [isFlipped, setIsFlipped] = useState(false);
@@ -53,6 +55,12 @@ export default function FlippableSpellingCard({
             setIsFlipped(!isFlipped);
         }
     };
+
+    const handleNext = () => {
+        setHasSubmitted(false)
+        setIsFlipped(false)
+        onNext()
+    }
 
     return (
         <section className="max-w-2xl w-full">
@@ -93,6 +101,7 @@ export default function FlippableSpellingCard({
                             score_correct={score_correct}
                             score_total={score_total}
                             onSubmit={handleSubmit}
+                            onNext={handleNext}
                         />
                         {hasSubmitted && (
                             <p className="text-center text-sm text-white mt-2">
@@ -125,6 +134,7 @@ export default function FlippableSpellingCard({
                             colorBorder={colorBorder}
                             colorBorder2={colorBorder2}
                             colorLight={colorLight}
+                            onNext={handleNext}
                         />
                         <p className="text-center text-sm text-white mt-2">
                             👆 Click to see spelling
