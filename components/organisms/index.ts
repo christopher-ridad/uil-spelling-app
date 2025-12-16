@@ -2,5 +2,7 @@ import WordCardFront from './WordCardFront'
 import MisspellCardFront from './MisspellCardFront'
 import WordCardBack from './WordCardBack'
 import PracticeModeBox from './PracticeModeBox'
+import RecentWordBox from './RecentWordBox'
 
-export { WordCardFront, MisspellCardFront, WordCardBack, PracticeModeBox }
+export { WordCardFront, MisspellCardFront, WordCardBack }
+export { RecentWordBox, PracticeModeBox }
