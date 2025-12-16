@@ -5,6 +5,7 @@ import AudioButton from '../atoms/AudioButton'
 import Word from '../atoms/Word'
 import FeedbackMessage from '../atoms/FeedbackMessage'
 import SubmitAnswerButton from '../atoms/SubmitAnswerButton'
+import NextArrow from '../atoms/NextArrow'
 import SpellingInput from '../molecules/SpellingInput'
 
 interface WordCardFrontProps {
@@ -39,8 +40,14 @@ export default function WordCardFront({ color, colorHover, colorFocus, colorText
         }
     }
 
+    const handleNext = () => {
+        setUserAnswer('')
+        setFeedback(null)
+        setHasSubmitted(false)
+    }
+
     return (
-        <section className="max-w-2xl mx-auto">
+        <section className="max-w-2xl mx-auto relative">
             {/* Main Card */}
             <section className="bg-white rounded-lg shadow-lg p-8 mb-4">
                 <article className="text-center mb-8">
@@ -76,6 +83,8 @@ export default function WordCardFront({ color, colorHover, colorFocus, colorText
                     buttonText="Submit Answer"
                     onClick={handleSubmit}
                 />
+                            
+                <NextArrow onClick={handleNext} visible={hasSubmitted} color={color} colorHover={colorHover}/>
             </section>
         </section>
     );

@@ -19,7 +19,7 @@ export default function AudioButton({ color, colorHover, word }: AudioButtonProp
     return (
         <button 
             onClick={speakWord}
-            className={`${color} ${colorHover} mx-auto my-6 text-white rounded-full w-24 h-24 flex items-center justify-center`}
+            className={`${color} ${colorHover} mx-auto my-6 cursor-pointer text-white rounded-full w-24 h-24 flex items-center justify-center`}
         > 
             <Volume2 className="w-12 h-12" />
         </button>
