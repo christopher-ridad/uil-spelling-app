@@ -5,6 +5,7 @@ import CardHeader from '../molecules/CardHeader'
 import WordCardFront from '../organisms/WordCardFront'
 import WordCardBack from '../organisms/WordCardBack'
 
+
 interface FlippableSpellingCardProps {
     color: string
     colorDark: string
@@ -63,7 +64,7 @@ export default function FlippableSpellingCard({
                 correct={score_correct}
                 total={score_total}
             />
-
+            
             {/* Flip Card Container */}
             <section style={{ perspective: '1000px' }}>
                 <article 
@@ -118,6 +119,8 @@ export default function FlippableSpellingCard({
                             definition={definition}
                             partOfSpeech={partOfSpeech}
                             example={example}
+                            color={color}
+                            colorHover={colorHover}
                             colorText={colorText}
                             colorBorder={colorBorder}
                             colorBorder2={colorBorder2}
