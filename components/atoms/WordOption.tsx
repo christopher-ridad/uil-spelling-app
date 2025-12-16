@@ -9,8 +9,8 @@ interface WordOptionProps {
 
 export default function WordOption({ color, colorHover, word, isCorrect=false}: WordOptionProps) {
     return (
-        <article className={`p-4 rounded-lg text-white text-center text-lg ${color} ${colorHover}`}>
+        <button className={`p-4 rounded-lg text-white text-center text-lg ${color} ${colorHover} cursor-pointer transition-all hover:scale-105 hover:shadow-2xl group`}>
             {word}
-        </article>
+        </button>
     )
 }

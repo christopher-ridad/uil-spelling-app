@@ -96,7 +96,7 @@ export default function FlippableSpellingCard({
                             onSubmit={handleSubmit}
                         />
                         {hasSubmitted && (
-                            <p className="text-center text-sm text-gray-500 mt-2">
+                            <p className="text-center text-sm text-white mt-2">
                                 👆 Click to see definition
                             </p>
                         )}
@@ -125,7 +125,7 @@ export default function FlippableSpellingCard({
                             colorBorder2={colorBorder2}
                             colorLight={colorLight}
                         />
-                        <p className="text-center text-sm text-gray-500 mt-2">
+                        <p className="text-center text-sm text-white mt-2">
                             👆 Click to see spelling
                         </p>
                     </figure>
