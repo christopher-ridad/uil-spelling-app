@@ -45,6 +45,7 @@ export default function FlippableSpellingCard({
 }: FlippableSpellingCardProps) {
     const [hasSubmitted, setHasSubmitted] = useState(false);
     const [isFlipped, setIsFlipped] = useState(false);
+    const [isExiting, setIsExiting ] = useState(false)
 
     const handleSubmit = () => {
         setHasSubmitted(true);
@@ -57,9 +58,16 @@ export default function FlippableSpellingCard({
     };
 
     const handleNext = () => {
-        setHasSubmitted(false)
-        setIsFlipped(false)
-        onNext()
+        setIsExiting(true)
+
+        setTimeout(() => {
+            setHasSubmitted(false)
+            setIsFlipped(false)
+            setIsExiting(false)
+            if (onNext) {
+                onNext()
+            }
+        }, 400)
     }
 
     return (
@@ -74,7 +82,12 @@ export default function FlippableSpellingCard({
             />
             
             {/* Flip Card Container */}
-            <section style={{ perspective: '1000px' }}>
+            <section className={`transition-all duration-400 ${
+                isExiting
+                    ? 'translate-x-[-100%] opacity-0'
+                    : 'translate-x-0 opacity-100'
+            }`}
+                style={{ perspective: '1000px' }}>
                 <article 
                     style={{
                         position: 'relative',
