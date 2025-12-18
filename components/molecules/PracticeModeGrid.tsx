@@ -13,7 +13,7 @@ export default function PracticeModeGrid() {
                 toColor={COLORS.blue.bgTransitionTo}
                 buttonText="Spelling Practice"
                 subText="Listen & type"
-                href="/spelling"
+                href="/dashboard/spelling"
             />
                 
             <PracticeMode
@@ -21,7 +21,7 @@ export default function PracticeModeGrid() {
                 toColor={COLORS.red.bgTransitionTo}
                 buttonText="Vocabulary"
                 subText="Flashcards"
-                href="/vocab"
+                href="/dashboard/spelling"
             />
 
             <PracticeMode
@@ -29,7 +29,7 @@ export default function PracticeModeGrid() {
                 toColor={COLORS.green.bgTransitionTo}
                 buttonText="Word Lists"
                 subText="Identify the misspelled word"
-                href="/word-lists"
+                href="/dashboard/spelling"
             />
 
             <PracticeMode
@@ -37,7 +37,7 @@ export default function PracticeModeGrid() {
                 toColor={COLORS.yellow.bgTransitionTo}
                 buttonText="Practice Test"
                 subText="Timed mode"
-                href="/mock-test"
+                href="/dashboard/spelling"
             />
         </main>      
     )

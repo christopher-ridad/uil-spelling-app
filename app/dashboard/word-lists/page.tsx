@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { COLORS } from '../../lib/colors'
-import { MisspellCardFront } from '../../components'
+import { COLORS } from '../../../lib/colors'
+import { MisspellCardFront } from '../../../components'
 
 export default function WordListPage() {
     const [randomWords, setRandomWords ] = useState<string[]>([])

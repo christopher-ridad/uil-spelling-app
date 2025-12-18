@@ -1,8 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { COLORS } from '../../lib/colors'
-import { FlippableSpellingCard } from '../../components'
+import { COLORS } from '../../../lib/colors'
+import { FlippableSpellingCard } from '../../../components'
 
 interface WordData {
     word: string
