@@ -18,7 +18,7 @@ export default function Page() {
         </div>
         <div className="px-6 py-8">
           <RecentWordBox />
-        </div>
+        </div> 
       </div>
     )
 }
