@@ -39,6 +39,13 @@ export default function PracticeModeGrid() {
                 subText="Timed mode"
                 href="/dashboard/mock-test"
             />
+            <PracticeMode
+                fromColor={COLORS.pink.bgTransitionFrom}
+                toColor={COLORS.pink.bgTransitionTo}
+                buttonText="Practice Test"
+                subText="Timed mode"
+                href="/dashboard/all-words"
+            />
         </main>      
     )
 }
