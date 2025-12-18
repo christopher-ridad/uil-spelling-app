@@ -28,7 +28,7 @@ export async function GET(request: Request) {
       }
       
       return NextResponse.json({
-        word: randomWord,
+        word: wordData.word,
         definition: wordData.definition,
         partOfSpeech: wordData.partOfSpeech,
         example: wordData.example,

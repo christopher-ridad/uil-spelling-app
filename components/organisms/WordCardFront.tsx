@@ -16,8 +16,8 @@ interface WordCardFrontProps {
     word: string
     score_correct: number
     score_total: number
-    onSubmit: () => void
     onNext: () => void
+    onSubmit: (isCorrect: boolean, userAnswer: string) => void
 }
 
 export default function WordCardFront({ 
@@ -26,8 +26,8 @@ export default function WordCardFront({
     colorFocus, 
     colorText, 
     word, 
-    onSubmit, 
-    onNext 
+    onNext,
+    onSubmit
 }: WordCardFrontProps) {
     
     const [userAnswer, setUserAnswer] = useState('');
@@ -35,13 +35,14 @@ export default function WordCardFront({
     const [hasSubmitted, setHasSubmitted] = useState(false)
 
     const handleSubmit = () => {
-        if (!userAnswer.trim()) return
+        const trimmed = userAnswer.trim()
+        if (!trimmed) return
 
-        const isCorrect = userAnswer.trim() == word
+        const isCorrect = trimmed == word
 
         setFeedback(isCorrect ? 'correct' : 'incorrect')
         setHasSubmitted(true)
-        onSubmit()
+        onSubmit(isCorrect, trimmed)
     }
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {

@@ -23,6 +23,7 @@ interface FlippableSpellingCardProps {
     partOfSpeech?: string
     example?: string
     onNext: () => void
+    onSubmit: (isCorrect: boolean, userAnswer: string) => void
 }
 
 export default function FlippableSpellingCard({ 
@@ -41,14 +42,16 @@ export default function FlippableSpellingCard({
     definition,
     partOfSpeech,
     example,
-    onNext
+    onNext,
+    onSubmit
 }: FlippableSpellingCardProps) {
     const [hasSubmitted, setHasSubmitted] = useState(false);
     const [isFlipped, setIsFlipped] = useState(false);
     const [isExiting, setIsExiting ] = useState(false)
 
-    const handleSubmit = () => {
+    const handleSubmit = (isCorrect: boolean, userAnswer: string) => {
         setHasSubmitted(true);
+        void onSubmit(isCorrect, userAnswer)
     };
 
     const toggleFlip = () => {
