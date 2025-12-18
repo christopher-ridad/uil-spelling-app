@@ -23,10 +23,6 @@ async function parseUILSpellingList() {
       allText += pageText + '\n';
     }
     
-    // Save raw text
-    fs.writeFileSync('./data/raw-text.txt', allText);
-    console.log('Saved raw text to data/raw-text.txt');
-    
     // Parse the words
     const words = extractWords(allText);
     
