@@ -63,8 +63,16 @@ export default function AllWordsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-600 to-pink-500 p-6">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-white mb-2">UIL Word List</h1>
-        <p className="text-white/80 mb-8">All 1,500 competition words</p>
+        <section className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 shadow-lg mb-6">
+            <article className="text-center">
+                <h1 className="text-4xl font-bold text-white mb-2">
+                    UIL Word List
+                </h1>
+                <p className="text-white/80">
+                    All 1,500 competition words • Practice and track your progress
+                </p>
+            </article>
+        </section>
 
         <WordSearchBar
           searchTerm={searchTerm}
