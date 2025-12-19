@@ -31,7 +31,7 @@ export async function recordWordAttempt(
     if (existing) {
         // update existing attempts
         await supabase
-            .from('user_word_progrses')
+            .from('user_word_progress')
             .update({
                 attempts: existing.attempts + 1,
                 correct_attempts: existing.correct_attempts + (wasCorrect ? 1 : 0),
@@ -47,7 +47,7 @@ export async function recordWordAttempt(
                 word,
                 attempts: 1,
                 correct_attempts: wasCorrect ? 1 : 0,
-                last_practice: new Date().toISOString(),
+                last_practiced: new Date().toISOString(),
             })
     }
 }
@@ -57,7 +57,7 @@ export async function getUserWordProgress(userId: string) {
         .from('user_word_progress')
         .select('*')
         .eq('user_id', userId)
-        .order('last_praticed', { ascending: false })
+        .order('last_practiced', { ascending: false })
 
     if (error) throw error
     return data
@@ -86,4 +86,21 @@ export async function getRecentAttempts(userId: string, limit = 3) {
     
     if (error) throw error
     return data
+}
+
+export async function getAllWordsWithProgress(userId: string) {
+  const { data, error } = await supabase
+    .from('user_word_progress')
+    .select('*')
+    .eq('user_id', userId)
+
+  if (error) throw error
+  
+  // Convert array to map for easy lookup
+  const progressMap: Record<string, any> = {}
+  data.forEach(item => {
+    progressMap[item.word] = item
+  })
+  
+  return progressMap
 }

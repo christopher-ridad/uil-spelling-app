@@ -1,56 +1,58 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAuth } from '@/contexts/AuthContext'
-import { WordSearchBar, AlphabetFilter, WordGrid, EmptyState } from '@/components'
+import { WordSearchBar, AlphabetFilter, WordGrid, EmptyState} from '@/components'
+import { getAllWordsWithProgress } from '@/lib/wordProgress'
 
 interface WordData {
   word: string
   attempts?: number
+  correct_attempts?: number
   accuracy?: number
 }
 
 export default function AllWordsPage() {
   const { user } = useAuth()
-  const [allWords, setAllWords] = useState<WordData[]>([])
+  const [allWords, setAllWords] = useState<string[]>([])
+  const [progressMap, setProgressMap] = useState<Record<string, any>>({})
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
   const [filterLetter, setFilterLetter] = useState('all')
 
   useEffect(() => {
-    if (!user) return
-
-    ;(async () => {
-      try {
-        setLoading(true)
-        const res = await fetch('/api/words')
-        const { words } = await res.json()
-
-        setAllWords(
-          words.map((w: any) => ({
-            word: typeof w === 'string' ? w : w.word,
-          }))
-        )
-      } catch (e) {
-        console.error(e)
-      } finally {
-        setLoading(false)
-      }
-    })()
+    loadData()
   }, [user])
 
-  const filteredWords = useMemo(() => {
-    const s = searchTerm.toLowerCase()
-    const letter = filterLetter.toLowerCase()
+  const loadData = async () => {
+      try {
+        // load all 1500 words
+        const wordsResponse = await fetch('/api/words')
+        const { words } = await wordsResponse.json()
+        const wordList = words.map((w: any) => typeof w === 'string' ? w : w.word)
+        setAllWords(wordList)
 
-    return allWords.filter((w) => {
-      const word = w.word.toLowerCase()
-      return (
-        word.includes(s) &&
-        (filterLetter === 'all' || word.startsWith(letter))
-      )
-    })
-  }, [allWords, searchTerm, filterLetter])
+        // load user's progress if logged in
+        if (user) {
+          const progress = await getAllWordsWithProgress(user.id)
+          setProgressMap(progress)
+        }
+
+        setLoading(false)
+
+      } catch (error) {
+        console.error('Error loading data:', error)
+        setLoading(false)
+      } 
+    }
+
+  const filteredWords = allWords.filter(w => {
+    const matchesSearch = w.toLowerCase().includes(searchTerm.toLowerCase())
+    const matchesLetter = filterLetter === 'all' || 
+      w.toLowerCase().startsWith(filterLetter.toLowerCase())
+    return matchesSearch && matchesLetter
+  })
+
 
   if (loading) {
     return (
@@ -86,7 +88,7 @@ export default function AllWordsPage() {
         {filteredWords.length === 0 ? (
           <EmptyState />
         ) : (
-          <WordGrid words={filteredWords} />
+          <WordGrid words={filteredWords} progressMap={progressMap} allWords={allWords} />
         )}
       </div>
     </div>
