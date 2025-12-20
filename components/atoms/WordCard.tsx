@@ -53,7 +53,7 @@ export default function WordCard({
           <div className="ml-4">
             <div className="w-14 h-14 rounded-full bg-white/10 border-2 border-white/30 border-dashed flex items-center justify-center">
               <span className="text-white/50 text-xs text-center leading-tight">
-                Not<br/>tried
+                N/A
               </span>
             </div>
           </div>
