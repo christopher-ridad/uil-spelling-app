@@ -54,3 +54,7 @@ If the UIL word list PDF changes, regenerate the data files with:
 npm run parse-pdf
 npm run fetch-definitions
 ```
+
+## Author
+ 
+Built by [Christopher Ridad](https://linkedin.com/in/christopher-ridad).
