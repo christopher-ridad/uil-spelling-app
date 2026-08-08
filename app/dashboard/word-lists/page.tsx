@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { COLORS } from '../../../lib/colors'
-import { MisspellCardFront } from '../../../components'
+import { COLORS } from '@/shared/utils/colors'
+import MisspellCardFront from '@/features/word-lists/components/MisspellCardFront'
 
 export default function WordListPage() {
     const [randomWords, setRandomWords ] = useState<string[]>([])
@@ -18,8 +18,6 @@ export default function WordListPage() {
             // parse response as json
             const data = await res.json()
 
-            console.log('Loaded word:', data.word)
-
             return data.word
         } catch(err) {
             console.error('Error loading word:', err)
@@ -31,7 +29,6 @@ export default function WordListPage() {
         const loadedRandomWords = new Set<string>
         while (loadedRandomWords.size < 5) { 
             const randomWord = await loadRandomWord()
-            console.log('Received word:', randomWord)
             loadedRandomWords.add(randomWord)
         }
         return [...loadedRandomWords]

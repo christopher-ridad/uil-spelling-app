@@ -1,54 +1,41 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { useAuth } from '@/contexts/AuthContext'
-import { WordSearchBar, AlphabetFilter, WordGrid, EmptyState} from '@/components'
-import { getAllWordsWithProgress } from '@/lib/wordProgress'
+import { useState } from 'react'
+import useSWR from 'swr'
+import { useAuth } from '@/shared/contexts/AuthContext'
+import WordSearchBar from '@/features/all-words/components/WordSearchBar'
+import AlphabetFilter from '@/features/all-words/components/AlphabetFilter'
+import WordGrid from '@/features/all-words/components/WordGrid'
+import EmptyState from '@/features/all-words/components/EmptyState'
+import { getAllWordsWithProgress } from '@/features/all-words/services/getAllWordsWithProgress'
 
-interface WordData {
-  word: string
-  attempts?: number
-  correct_attempts?: number
-  accuracy?: number
+async function fetchAllWords(): Promise<string[]> {
+  const res = await fetch('/api/words')
+  const { words } = await res.json()
+  return words.map((w: unknown) => typeof w === 'string' ? w : (w as { word: string }).word)
 }
 
 export default function AllWordsPage() {
   const { user } = useAuth()
-  const [allWords, setAllWords] = useState<string[]>([])
-  const [progressMap, setProgressMap] = useState<Record<string, any>>({})
-  const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
   const [filterLetter, setFilterLetter] = useState('all')
 
-  useEffect(() => {
-    loadData()
-  }, [user])
+  const { data: allWords = [], isLoading: wordsLoading } = useSWR('all-words', fetchAllWords, {
+    onError: (error) => console.error('Error loading words:', error)
+  })
 
-  const loadData = async () => {
-      try {
-        // load all 1500 words
-        const wordsResponse = await fetch('/api/words')
-        const { words } = await wordsResponse.json()
-        const wordList = words.map((w: any) => typeof w === 'string' ? w : w.word)
-        setAllWords(wordList)
+  // load user's progress if logged in
+  const { data: progressMap = {}, isLoading: progressLoading } = useSWR(
+    user ? ['all-words-progress', user.id] : null,
+    () => getAllWordsWithProgress(user!.id),
+    { onError: (error) => console.error('Error loading progress:', error) }
+  )
 
-        // load user's progress if logged in
-        if (user) {
-          const progress = await getAllWordsWithProgress(user.id)
-          setProgressMap(progress)
-        }
-
-        setLoading(false)
-
-      } catch (error) {
-        console.error('Error loading data:', error)
-        setLoading(false)
-      } 
-    }
+  const loading = wordsLoading || (user ? progressLoading : false)
 
   const filteredWords = allWords.filter(w => {
     const matchesSearch = w.toLowerCase().includes(searchTerm.toLowerCase())
-    const matchesLetter = filterLetter === 'all' || 
+    const matchesLetter = filterLetter === 'all' ||
       w.toLowerCase().startsWith(filterLetter.toLowerCase())
     return matchesSearch && matchesLetter
   })
