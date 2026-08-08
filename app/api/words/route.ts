@@ -5,7 +5,8 @@ import path from 'path';
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const random = searchParams.get('random');
+    const random = searchParams.get('random'); // get random word
+    const word = searchParams.get('word'); // get specific word
     
     // Load the word list
     const wordListPath = path.join(process.cwd(), 'data', 'wordlist.json');
@@ -15,6 +16,26 @@ export async function GET(request: Request) {
     const definitionsPath = path.join(process.cwd(), 'data', 'words-with-definitions.json');
     const definitionsMap = JSON.parse(fs.readFileSync(definitionsPath, 'utf-8'));
     
+    // if returning specific word, return that word w/ its related info
+    if (word) {
+      const wordData = definitionsMap[word]
+
+      if (!wordData) {
+        return NextResponse.json({
+          error: 'Word not found',
+          word
+        }, { status: 404 })
+      }
+
+      return NextResponse.json({
+        word: word,
+        definition: wordData.definition,
+        partOfSpeech: wordData.partOfSpeech,
+        example: wordData.example,
+        source: wordData.source
+      })
+    }
+
     // If random=true, return a single random word with its definition
     if (random === 'true') {
       const randomWord = wordList[Math.floor(Math.random() * wordList.length)];
@@ -37,7 +58,6 @@ export async function GET(request: Request) {
     }
     
     // Otherwise return all words with definitions
-    // CHECK THIS
     const allWordsWithData = wordList.map((word: string) => ({
       word: word,
       ...definitionsMap[word]

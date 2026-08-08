@@ -1,16 +1,14 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useAuth } from '@/contexts/AuthContext'
-import { NavBar, WelcomeBox, StatsCardGrid, PracticeModeBox, RecentWordBox, QuickActionGrid } from '@/components'
-import { getDashboardStats } from '@/lib/wordProgress'
-
-interface Attempt {
-  id: string
-  word: string
-  was_correct: boolean
-  created_at: string
-}
+import useSWR from 'swr'
+import { useAuth } from '@/shared/contexts/AuthContext'
+import NavBar from '@/shared/components/NavBar'
+import WelcomeBox from '@/features/dashboard/components/WelcomeBox'
+import StatsCardGrid from '@/features/dashboard/components/StatsCardGrid'
+import PracticeModeBox from '@/features/dashboard/components/PracticeModeBox'
+import RecentWordBox from '@/features/dashboard/components/RecentWordBox'
+import QuickActionGrid from '@/features/dashboard/components/QuickActionGrid'
+import { getDashboardStats } from '@/features/dashboard/services/getDashboardStats'
 
 interface DashboardStats {
   totalWordsPracticed: number
@@ -19,35 +17,23 @@ interface DashboardStats {
   streak: number
 }
 
+const DEFAULT_STATS: DashboardStats = {
+  totalWordsPracticed: 0,
+  totalAttempts: 0,
+  overallAccuracy: 0,
+  streak: 0
+}
+
 export default function Page() {
   const { user } = useAuth()
-  const [stats, setStats] = useState<DashboardStats>({
-    totalWordsPracticed: 0,
-    totalAttempts: 0,
-    overallAccuracy: 0,
-    streak: 0
-  })
-  
-  const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    if (user) {
-      loadStats()
-    }
-  }, [user])
+  const { data: stats = DEFAULT_STATS, isLoading } = useSWR<DashboardStats>(
+    user ? ['dashboard-stats', user.id] : null,
+    () => getDashboardStats(user!.id),
+    { onError: (error) => console.error('Error loading dashboard stats:', error) }
+  )
 
-  const loadStats = async () => {
-    if (!user) return
-  
-    try {
-      const data = await getDashboardStats(user.id)
-      setStats(data)
-      setLoading(false)
-    } catch (error) {
-      console.error('Error loading dashboard stats:', error)
-      setLoading(false)
-    }
-  }
+  const loading = user ? isLoading : true
 
   if (loading) {
     return (
@@ -61,10 +47,10 @@ export default function Page() {
       <div className="min-h-screen bg-gradient-to-br from-violet-600 via-purple-600 to-pink-500">
         <NavBar />
         <div className="px-6 pt-8">
-          <WelcomeBox userName={"Chris"} streak={5}/>
+          <WelcomeBox userName={user?.email?.split('@')[0] ?? 'Guest'} streak={stats.streak}/>
         </div>
         <div className="px-6">
-          <StatsCardGrid 
+          <StatsCardGrid
             totalWordsPracticed={stats.totalWordsPracticed}
             overallAccuracy={stats.overallAccuracy}
             streak={stats.streak}
@@ -72,13 +58,13 @@ export default function Page() {
         </div>
         <div className="px-6 pb-8">
           <QuickActionGrid />
-        </div>        
+        </div>
         <div className="px-6">
           <PracticeModeBox />
         </div>
         <div className="px-6 py-8">
           <RecentWordBox />
-        </div> 
+        </div>
       </div>
     )
 }

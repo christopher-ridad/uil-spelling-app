@@ -1,11 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useAuth } from '@/contexts/AuthContext'
-import { recordWordAttempt } from '@/lib/wordProgress'
+import { useEffect, useState } from 'react'
+import useSWR from 'swr'
+import { useAuth } from '@/shared/contexts/AuthContext'
+import { recordWordAttempt } from '@/shared/services/recordWordAttempt'
 import { useRouter } from 'next/navigation'
-import { COLORS } from '../../../lib/colors'
-import { FlippableSpellingCard } from '../../../components'
+import { COLORS } from '@/shared/utils/colors'
+import FlippableSpellingCard from '@/features/spelling/components/FlippableSpellingCard'
 
 interface WordData {
     word: string
@@ -15,44 +16,23 @@ interface WordData {
     source?: string
 }
 
+async function fetchRandomWord(): Promise<WordData> {
+    const res = await fetch('/api/words?random=true')
+    return res.json()
+}
+
 export default function SpellingPage() {
     const { user, loading: authLoading } = useAuth()
     const router = useRouter()
-    const [currentWord, setCurrentWord] = useState<WordData | null>(null)
-    const [loading, setLoading] = useState(true)
     const [key, setKey] = useState(0)
 
-    // Load random word
-    const loadRandomWord = () => {
-        console.log('loadRandomWord called')
-        setLoading(true)
-        
-        console.log('Fetching from /api/words?random=true')
-        
-        fetch('/api/words?random=true')
-            .then(res => {
-                console.log('Response status:', res.status)
-                return res.json()
-            })
-            .then(data => {
-                console.log('Data received:', data)
-                setCurrentWord(data)
-                setKey(prev => prev + 1)
-                setLoading(false)
-            })
-            .catch(err => {
-                console.error('Fetch error:', err)
-                setLoading(false)
-            })
-    }
+    const { data: currentWord, isLoading, mutate } = useSWR(
+        user ? 'random-word' : null,
+        fetchRandomWord,
+        { onError: (err) => console.error('Fetch error:', err) }
+    )
 
-    // Load word when user is available
-    useEffect(() => {
-        console.log('useEffect running, user:', user)
-        if (user) {
-            loadRandomWord()
-        }
-    }, [user])
+    const loading = user ? isLoading : true
 
     // Redirect to login if not authenticated
     useEffect(() => {
@@ -61,8 +41,9 @@ export default function SpellingPage() {
         }
     }, [user, authLoading, router])
 
-    const handleNext = () => {
-        loadRandomWord()   
+    const handleNext = async () => {
+        await mutate()
+        setKey(prev => prev + 1)
     }
 
     const handleSubmit = async (isCorrect: boolean, userAnswer: string) => {
@@ -74,7 +55,6 @@ export default function SpellingPage() {
                     isCorrect,
                     userAnswer
                 )
-                console.log('Progress saved!')
             } catch (error) {
                 console.error('Error saving progress:', error)
             }

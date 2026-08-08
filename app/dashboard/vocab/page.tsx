@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { COLORS } from '../../../lib/colors'
-import { VocabCard } from '../../../components'
+import { COLORS } from '@/shared/utils/colors'
+import VocabCard from '@/features/vocab/components/VocabCard'
 
 export default function VocabPage() {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
