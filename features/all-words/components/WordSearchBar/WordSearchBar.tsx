@@ -11,7 +11,7 @@ interface SearchBarProps {
 
 export default function WordSearchBar({ searchTerm, onChange, shown, total }: SearchBarProps) {
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-4 mb-6 shadow-sm">
+    <div className="bg-white/70 backdrop-blur-sm border border-white/50 rounded-xl p-4 mb-6 shadow-sm">
       <div className="relative">
         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
         <input

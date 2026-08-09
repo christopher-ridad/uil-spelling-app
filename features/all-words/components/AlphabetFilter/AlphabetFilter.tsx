@@ -11,7 +11,7 @@ interface FilterProps {
 
 export default function AlphabetFilter({ value, onChange }: FilterProps) {
   return (
-    <section className="bg-white border border-gray-200 rounded-xl p-4 mb-6 shadow-sm">
+    <section className="bg-white/70 backdrop-blur-sm border border-white/50 rounded-xl p-4 mb-6 shadow-sm">
       <article className="flex items-center gap-2 mb-3">
         <Filter className="w-5 h-5 text-gray-700" />
         <span className="text-gray-900 font-semibold">Filter by letter:</span>
