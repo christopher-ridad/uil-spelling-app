@@ -13,11 +13,11 @@ export default function NavBar() {
     const displayName = user?.email?.split('@')[0] ?? 'Guest'
     const initials = displayName.slice(0, 2).toUpperCase()
 
-    const barClass = colors ? `${colors.bg} shadow-lg` : 'bg-white border-b border-gray-200'
+    const barClass = colors ? `${colors.bg} shadow-lg` : 'bg-white/70 backdrop-blur-sm border-b border-white/50'
     const textClass = colors ? 'text-white' : 'text-gray-900'
     const mutedTextClass = colors ? 'text-white/80' : 'text-gray-500'
     const hoverTextClass = colors ? 'hover:text-white' : 'hover:text-gray-900'
-    const iconChipClass = colors ? 'bg-white/20 backdrop-blur-sm' : 'bg-gray-100'
+    const iconChipClass = colors ? 'bg-white/20 backdrop-blur-sm' : 'bg-gray-900/10'
     const iconColorClass = colors ? 'text-white' : 'text-gray-700'
 
     return (
