@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "parse-pdf": "node scripts/parsePDF.js",
-    "fetch-definitions": "node scripts/fetchDefinitions.js"
+    "fetch-definitions": "node scripts/fetchDefinitions.js",
+    "generate-misspellings": "node scripts/generateMisspellings.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.88.0",
