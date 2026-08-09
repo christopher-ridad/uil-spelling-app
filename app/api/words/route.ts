@@ -1,20 +1,23 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { WordDefinition } from '@/shared/models/WordDefinition';
+
+type DefinitionsMap = Record<string, Omit<WordDefinition, 'word'>>
 
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const random = searchParams.get('random'); // get random word
     const word = searchParams.get('word'); // get specific word
-    
+
     // Load the word list
     const wordListPath = path.join(process.cwd(), 'data', 'wordlist.json');
-    const wordList = JSON.parse(fs.readFileSync(wordListPath, 'utf-8'));
-    
+    const wordList: string[] = JSON.parse(fs.readFileSync(wordListPath, 'utf-8'));
+
     // Load the definitions map
     const definitionsPath = path.join(process.cwd(), 'data', 'words-with-definitions.json');
-    const definitionsMap = JSON.parse(fs.readFileSync(definitionsPath, 'utf-8'));
+    const definitionsMap: DefinitionsMap = JSON.parse(fs.readFileSync(definitionsPath, 'utf-8'));
     
     // if returning specific word, return that word w/ its related info
     if (word) {
@@ -49,7 +52,7 @@ export async function GET(request: Request) {
       }
       
       return NextResponse.json({
-        word: wordData.word,
+        word: randomWord,
         definition: wordData.definition,
         partOfSpeech: wordData.partOfSpeech,
         example: wordData.example,

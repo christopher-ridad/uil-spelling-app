@@ -1,4 +1,5 @@
 import { supabase } from '@/shared/utils/supabase'
+import { WordAttempt } from '@/shared/models/WordAttempt'
 
 export async function getDashboardStats(userId: string) {
   // get overall stats from user_word_progress
@@ -32,7 +33,7 @@ export async function getDashboardStats(userId: string) {
   }
 }
 
-function calculateStreak(attempts: { created_at: string }[]): number {
+function calculateStreak(attempts: Pick<WordAttempt, 'created_at'>[]): number {
   if (attempts.length === 0) return 0
 
   const today = new Date()

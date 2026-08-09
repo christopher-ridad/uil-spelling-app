@@ -1,6 +1,7 @@
 import { supabase } from '@/shared/utils/supabase'
+import { WordProgressRow } from '@/shared/models/WordProgressRow'
 
-export async function getUserWordProgress(userId: string) {
+export async function getUserWordProgress(userId: string): Promise<WordProgressRow[]> {
     const { data, error } = await supabase
         .from('user_word_progress')
         .select('*')
