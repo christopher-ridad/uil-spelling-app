@@ -7,12 +7,10 @@ import FeedbackMessage from '../FeedbackMessage'
 import SubmitAnswerButton from '@/shared/components/SubmitAnswerButton'
 import NextArrow from '@/shared/components/NextArrow'
 import SpellingInput from '@/shared/components/SpellingInput'
+import { ColorScheme } from '@/shared/utils/colors'
 
 interface WordCardFrontProps {
-    color: string
-    colorHover: string
-    colorFocus: string
-    colorText: string
+    colors: ColorScheme
     word: string
     score_correct: number
     score_total: number
@@ -20,12 +18,9 @@ interface WordCardFrontProps {
     onSubmit: (isCorrect: boolean, userAnswer: string) => void
 }
 
-export default function WordCardFront({ 
-    color, 
-    colorHover, 
-    colorFocus, 
-    colorText, 
-    word, 
+export default function WordCardFront({
+    colors,
+    word,
     onNext,
     onSubmit
 }: WordCardFrontProps) {
@@ -66,10 +61,10 @@ export default function WordCardFront({
                     <p className="text-black mb-4">Listen to the word and spell it correctly</p>
                     
                     {/* Audio Button */}
-                    <AudioButton color={color} colorHover={colorHover} word={word} />
-                    
+                    <AudioButton color={colors.bg} colorHover={colors.bgHover} word={word} />
+
                     {feedback ? (
-                        <Word color={colorText} word={word} />
+                        <Word color={colors.bgText} word={word} />
                     ) : (
                         <p className="text-xl text-black mb-2">
                             Word #{1}
@@ -82,7 +77,7 @@ export default function WordCardFront({
 
                 {/* Input Area */}
                 <SpellingInput
-                colorFocus={colorFocus}
+                colorFocus={colors.bgFocus}
                 value={userAnswer}
                 onChange={(e) => setUserAnswer(e.target.value)}
                 onKeyPress={handleKeyPress}
@@ -90,12 +85,12 @@ export default function WordCardFront({
 
                 {/* Submit Button */}
                 <SubmitAnswerButton
-                    color={color}
-                    hoverColor={colorHover}
+                    color={colors.bg}
+                    hoverColor={colors.bgHover}
                     buttonText="Submit Answer"
                     onClick={handleSubmit}
-                />       
-                <NextArrow onClick={handleNext} visible={hasSubmitted} color={color} colorHover={colorHover}/>
+                />
+                <NextArrow onClick={handleNext} visible={hasSubmitted} color={colors.bg} colorHover={colors.bgHover}/>
             </section>
         </section>
     );

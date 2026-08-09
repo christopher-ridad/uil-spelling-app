@@ -5,12 +5,10 @@ import WordOptionList from '../WordOptionList'
 import SubmitAnswerButton from '@/shared/components/SubmitAnswerButton'
 import CardHeader from '@/shared/components/CardHeader'
 import SpellingInput from '@/shared/components/SpellingInput'
+import { ColorScheme } from '@/shared/utils/colors'
 
 interface WordCardFrontProps {
-    color: string
-    colorDark: string
-    colorHover: string
-    colorFocus: string
+    colors: ColorScheme
     headerText?: string
     word1: string
     word2: string
@@ -21,19 +19,16 @@ interface WordCardFrontProps {
     score_total: number
 }
 
-export default function MisspellCardFront({ 
-    color, 
-    colorDark, 
-    colorHover, 
-    colorFocus, 
-    headerText="UIL Spelling Test", 
+export default function MisspellCardFront({
+    colors,
+    headerText="UIL Spelling Test",
     word1,
     word2,
     word3,
     word4,
     word5,
-    score_correct, 
-    score_total 
+    score_correct,
+    score_total
 }: WordCardFrontProps) {
 
     const [userInput, setUserInput] = useState('');
@@ -56,9 +51,8 @@ export default function MisspellCardFront({
     return (
         <section className="max-w-2xl w-full">
             {/* Header */}
-            <CardHeader 
-                headerColor={color}
-                scoreDisplayColor={colorDark}
+            <CardHeader
+                colors={colors}
                 headerText={headerText}
                 correct={score_correct}
                 total={score_total}
@@ -66,15 +60,15 @@ export default function MisspellCardFront({
             {/* Main Card */}
             <section className="bg-white rounded-lg shadow-lg p-8 mb-4">
                 <article className="text-center mb-8">
-                    
+
                     {/* Word Options */}
-                    <WordOptionList color={color} colorHover={colorHover} options={[word1, word2, word3, word4, word5]}/>
-                    
+                    <WordOptionList color={colors.bg} colorHover={colors.bgHover} options={[word1, word2, word3, word4, word5]}/>
+
                 </article>
 
                 {/* Input Area */}
                 <SpellingInput
-                colorFocus={colorFocus}
+                colorFocus={colors.bgFocus}
                 value={userInput}
                 onChange={handleInputChange}
                 onKeyPress={handleKeyPress}
@@ -82,8 +76,8 @@ export default function MisspellCardFront({
 
                 {/* Submit Button */}
                 <SubmitAnswerButton
-                    color={color}
-                    hoverColor={colorHover}
+                    color={colors.bg}
+                    hoverColor={colors.bgHover}
                     buttonText="Submit Answer"
                     onClick={handleSubmit}
                 />

@@ -74,14 +74,7 @@ export default function MockTestPage() {
         <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-yellow-600 to-orange-300">
             <FlippableSpellingCard
                 key={key}
-                color={COLORS.yellow.bg}
-                colorDark={COLORS.yellow.bgDark}
-                colorHover={COLORS.yellow.bgHover}
-                colorFocus={COLORS.yellow.bgFocus}
-                colorText={COLORS.yellow.bgText}
-                colorBorder={COLORS.yellow.bgBorder}
-                colorBorder2={COLORS.yellow.bgBorder2}
-                colorLight={COLORS.yellow.bgLight}
+                colors={COLORS.yellow}
                 headerText="Mock Test"
                 score_correct={0}
                 score_total={1}

@@ -4,17 +4,10 @@ import { useState } from 'react'
 import CardHeader from '@/shared/components/CardHeader'
 import WordCardFront from '../WordCardFront'
 import WordCardBack from '@/shared/components/WordCardBack'
-
+import { ColorScheme } from '@/shared/utils/colors'
 
 interface FlippableSpellingCardProps {
-    color: string
-    colorDark: string
-    colorHover: string
-    colorFocus: string
-    colorText: string
-    colorBorder: string
-    colorBorder2: string
-    colorLight: string
+    colors: ColorScheme
     headerText: string
     score_correct: number
     score_total: number
@@ -26,17 +19,10 @@ interface FlippableSpellingCardProps {
     onSubmit: (isCorrect: boolean, userAnswer: string) => void
 }
 
-export default function FlippableSpellingCard({ 
-    color, 
-    colorDark, 
-    colorHover, 
-    colorFocus, 
-    colorText,
-    colorBorder,
-    colorBorder2,
-    colorLight,
-    headerText, 
-    score_correct, 
+export default function FlippableSpellingCard({
+    colors,
+    headerText,
+    score_correct,
     score_total,
     word,
     definition,
@@ -76,9 +62,8 @@ export default function FlippableSpellingCard({
     return (
         <section className="max-w-2xl w-full">
             {/* Header */}
-            <CardHeader 
-                headerColor={color}
-                scoreDisplayColor={colorDark}
+            <CardHeader
+                colors={colors}
                 headerText={headerText}
                 correct={score_correct}
                 total={score_total}
@@ -108,11 +93,8 @@ export default function FlippableSpellingCard({
                         }}
                         onClick={hasSubmitted ? toggleFlip : undefined}
                     >
-                        <WordCardFront 
-                            color={color}
-                            colorHover={colorHover}
-                            colorFocus={colorFocus}
-                            colorText={colorText}
+                        <WordCardFront
+                            colors={colors}
                             word={word}
                             score_correct={score_correct}
                             score_total={score_total}
@@ -139,17 +121,12 @@ export default function FlippableSpellingCard({
                         }}
                         onClick={toggleFlip}
                     >
-                        <WordCardBack 
+                        <WordCardBack
                             word={word}
                             definition={definition}
                             partOfSpeech={partOfSpeech}
                             example={example}
-                            color={color}
-                            colorHover={colorHover}
-                            colorText={colorText}
-                            colorBorder={colorBorder}
-                            colorBorder2={colorBorder2}
-                            colorLight={colorLight}
+                            colors={colors}
                             onNext={handleNext}
                         />
                         <p className="text-center text-sm text-white mt-2">

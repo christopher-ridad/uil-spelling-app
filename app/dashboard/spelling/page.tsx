@@ -74,14 +74,7 @@ export default function SpellingPage() {
         <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-600 to-cyan-500">
             <FlippableSpellingCard
                 key={key}
-                color={COLORS.blue.bg}
-                colorDark={COLORS.blue.bgDark}
-                colorHover={COLORS.blue.bgHover}
-                colorFocus={COLORS.blue.bgFocus}
-                colorText={COLORS.blue.bgText}
-                colorBorder={COLORS.blue.bgBorder}
-                colorBorder2={COLORS.blue.bgBorder2}
-                colorLight={COLORS.blue.bgLight}
+                colors={COLORS.blue}
                 headerText="Spelling Practice"
                 score_correct={0}
                 score_total={1}
