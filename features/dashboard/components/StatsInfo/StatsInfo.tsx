@@ -1,6 +1,7 @@
 'use client'
 
 import BookOpenIcon from '@/shared/components/BookOpenIcon'
+import { useCountUp } from '@/shared/hooks/useCountUp'
 
 interface StatsInfoProps {
     title: string
@@ -10,6 +11,8 @@ interface StatsInfoProps {
 }
 
 export default function StatsInfo({ title, stats, subStats, isAccuracy }: StatsInfoProps) {
+    const displayStats = useCountUp(stats)
+
     return (
         <article className="flex flex-col gap-3 mb-3">
             <div className="w-12 h-12 bg-white/20 p-2 rounded-lg">
@@ -19,7 +22,7 @@ export default function StatsInfo({ title, stats, subStats, isAccuracy }: StatsI
                 {title}
             </h3>
             <p className="text-4xl font-semibold leading-none text-white">
-                {stats}
+                {displayStats}
                 {isAccuracy && (
                     <span>
                         %

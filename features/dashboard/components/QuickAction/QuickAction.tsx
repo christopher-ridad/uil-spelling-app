@@ -20,7 +20,7 @@ export default function QuickAction ({
     return (
         <button onClick={onClick}
                 className={`flex flex-col items-start bg-gradient-to-br ${colors.bgTransitionFrom} ${colors.bgTransitionTo} rounded-xl
-                p-6 cursor-pointer hover:shadow-2xl transition-all hover:scale-105 group`}
+                p-6 cursor-pointer hover:shadow-2xl transition-all hover:scale-105 active:scale-95 group`}
         >
             <BookOpenIcon />
             <h4 className="font-bold text-white mb-1">
