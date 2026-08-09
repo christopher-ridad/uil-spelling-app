@@ -2,6 +2,7 @@
 
 import CardHeader from '@/shared/components/CardHeader'
 import WordCardBack from '@/shared/components/WordCardBack'
+import { ColorScheme } from '@/shared/utils/colors'
 
 interface VocabCardProps {
     headerText: string
@@ -11,13 +12,7 @@ interface VocabCardProps {
     definition: string
     partOfSpeech: string
     example: string
-    color: string
-    colorDark: string
-    colorHover: string
-    colorText: string
-    colorBorder: string
-    colorBorder2: string
-    colorLight: string
+    colors: ColorScheme
     onNext: () => void
 }
 
@@ -27,13 +22,7 @@ export default function VocabCard({
     definition,
     partOfSpeech,
     example,
-    color,
-    colorDark,
-    colorHover,
-    colorText,
-    colorBorder,
-    colorBorder2,
-    colorLight,
+    colors,
     score_correct,
     score_total,
     onNext
@@ -46,26 +35,20 @@ export default function VocabCard({
     return (
         <section className="max-w-2xl w-full">
             {/* Header */}
-            <CardHeader 
-                headerColor={color}
-                scoreDisplayColor={colorDark}
+            <CardHeader
+                colors={colors}
                 headerText={headerText}
                 correct={score_correct}
                 total={score_total}
             />
 
             {/* Main Card */}
-            <WordCardBack 
+            <WordCardBack
                 word={word}
                 definition={definition}
                 partOfSpeech={partOfSpeech}
                 example={example}
-                color={color}
-                colorHover={colorHover}
-                colorText={colorText}
-                colorBorder={colorBorder}
-                colorBorder2={colorBorder2}
-                colorLight={colorLight}
+                colors={colors}
                 onNext={handleNext}
             />
         </section>

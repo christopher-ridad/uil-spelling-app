@@ -42,10 +42,7 @@ export default function WordListPage() {
     return (
         <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-green-600 to-teal-300">
             <MisspellCardFront
-                color={COLORS.green.bg}
-                colorDark={COLORS.green.bgDark}
-                colorHover={COLORS.green.bgHover}
-                colorFocus={COLORS.green.bgFocus}
+                colors={COLORS.green}
                 headerText="Word Lists"
                 word1={randomWords[0]}
                 word2={randomWords[1]}
