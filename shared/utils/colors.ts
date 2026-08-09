@@ -15,9 +15,9 @@ export interface ColorScheme {
 }
 
 export const NEUTRAL_CANVAS = {
-  from: 'from-blue-100',
-  via: 'via-purple-100',
-  to: 'to-pink-100'
+  from: 'from-blue-200',
+  via: 'via-purple-200',
+  to: 'to-pink-200'
 }
 
 export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'orange', ColorScheme> = {
@@ -30,8 +30,8 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgText: 'text-blue-700',
     bgBorder: 'border-blue-200',
     bgBorder2: 'border-blue-500',
-    bgCanvasFrom: 'from-blue-50',
-    bgCanvasTo: 'to-blue-100',
+    bgCanvasFrom: 'from-blue-100',
+    bgCanvasTo: 'to-blue-200',
     bgTransitionFrom: 'from-blue-500',
     bgTransitionTo: 'to-cyan-500',
     bgTransitionTo2: 'to-blue-600'
@@ -45,8 +45,8 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgText: 'text-red-700',
     bgBorder: 'border-red-200',
     bgBorder2: 'border-red-500',
-    bgCanvasFrom: 'from-red-50',
-    bgCanvasTo: 'to-red-100',
+    bgCanvasFrom: 'from-red-100',
+    bgCanvasTo: 'to-red-200',
     bgTransitionFrom: 'from-red-500',
     bgTransitionTo: 'to-pink-500'
   },
@@ -59,8 +59,8 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgText: 'text-green-700',
     bgBorder: 'border-green-200',
     bgBorder2: 'border-green-500',
-    bgCanvasFrom: 'from-green-50',
-    bgCanvasTo: 'to-green-100',
+    bgCanvasFrom: 'from-green-100',
+    bgCanvasTo: 'to-green-200',
     bgTransitionFrom: 'from-green-500',
     bgTransitionTo: 'to-teal-500',
     bgTransitionTo2: 'to-emerald-600'
@@ -74,8 +74,8 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgText: 'text-yellow-600',
     bgBorder: 'border-yellow-200',
     bgBorder2: 'border-yellow-500',
-    bgCanvasFrom: 'from-yellow-50',
-    bgCanvasTo: 'to-yellow-100',
+    bgCanvasFrom: 'from-yellow-100',
+    bgCanvasTo: 'to-yellow-200',
     bgTransitionFrom: 'from-yellow-500',
     bgTransitionTo: 'to-orange-500'
   },
@@ -88,8 +88,8 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgText: 'text-pink-700',
     bgBorder: 'border-pink-200',
     bgBorder2: 'border-pink-500',
-    bgCanvasFrom: 'from-pink-50',
-    bgCanvasTo: 'to-pink-100',
+    bgCanvasFrom: 'from-pink-100',
+    bgCanvasTo: 'to-pink-200',
     bgTransitionFrom: 'from-purple-500',
     bgTransitionTo: 'to-pink-500'
   },
@@ -102,8 +102,8 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgText: 'text-orange-700',
     bgBorder: 'border-orange-200',
     bgBorder2: 'border-orange-500',
-    bgCanvasFrom: 'from-orange-50',
-    bgCanvasTo: 'to-orange-100',
+    bgCanvasFrom: 'from-orange-100',
+    bgCanvasTo: 'to-orange-200',
     bgTransitionFrom: 'from-orange-500',
     bgTransitionTo: 'to-red-500'
   }

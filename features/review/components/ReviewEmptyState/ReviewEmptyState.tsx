@@ -6,7 +6,7 @@ interface ReviewEmptyStateProps {
 
 export default function ReviewEmptyState({ minAccuracy }: ReviewEmptyStateProps) {
     return (
-        <div className="bg-white/70 backdrop-blur-sm border border-white/50 rounded-xl p-12 text-center shadow-sm">
+        <div className="bg-white/50 backdrop-blur-sm border border-white/50 rounded-xl p-12 text-center shadow-sm">
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-4xl">🎉</span>
             </div>

@@ -52,7 +52,7 @@ export default function AllWordsPage() {
   return (
     <div className="p-6">
       <div className="max-w-6xl mx-auto">
-        <section className="bg-white/70 backdrop-blur-sm border border-white/50 rounded-xl p-8 shadow-sm mb-6">
+        <section className="bg-white/50 backdrop-blur-sm border border-white/50 rounded-xl p-8 shadow-sm mb-6">
             <article className="text-center">
                 <h1 className="text-4xl font-bold text-gray-900 mb-2">
                     UIL Word List
