@@ -8,7 +8,6 @@ import PracticeModeBox from '@/features/dashboard/components/PracticeModeBox'
 import RecentWordBox from '@/features/dashboard/components/RecentWordBox'
 import QuickActionGrid from '@/features/dashboard/components/QuickActionGrid'
 import ScrollReveal from '@/shared/components/ScrollReveal'
-import WordBackground from '@/features/dashboard/components/WordBackground'
 import { getDashboardStats } from '@/features/dashboard/services/getDashboardStats'
 
 interface DashboardStats {
@@ -45,29 +44,26 @@ export default function Page() {
   }
 
     return (
-      <div className="relative">
-        <WordBackground />
-        <div className="relative z-10">
-          <ScrollReveal className="px-6 pt-8">
-            <WelcomeBox userName={user?.email?.split('@')[0] ?? 'Guest'} streak={stats.streak}/>
-          </ScrollReveal>
-          <ScrollReveal className="px-6">
-            <StatsCardGrid
-              totalWordsPracticed={stats.totalWordsPracticed}
-              overallAccuracy={stats.overallAccuracy}
-              streak={stats.streak}
-            />
-          </ScrollReveal>
-          <ScrollReveal className="px-6 pb-8">
-            <QuickActionGrid />
-          </ScrollReveal>
-          <ScrollReveal className="px-6">
-            <PracticeModeBox />
-          </ScrollReveal>
-          <ScrollReveal className="px-6 py-8">
-            <RecentWordBox />
-          </ScrollReveal>
-        </div>
+      <div>
+        <ScrollReveal className="px-6 pt-8">
+          <WelcomeBox userName={user?.email?.split('@')[0] ?? 'Guest'} streak={stats.streak}/>
+        </ScrollReveal>
+        <ScrollReveal className="px-6">
+          <StatsCardGrid
+            totalWordsPracticed={stats.totalWordsPracticed}
+            overallAccuracy={stats.overallAccuracy}
+            streak={stats.streak}
+          />
+        </ScrollReveal>
+        <ScrollReveal className="px-6 pb-8">
+          <QuickActionGrid />
+        </ScrollReveal>
+        <ScrollReveal className="px-6">
+          <PracticeModeBox />
+        </ScrollReveal>
+        <ScrollReveal className="px-6 py-8">
+          <RecentWordBox />
+        </ScrollReveal>
       </div>
     )
 }
