@@ -15,9 +15,9 @@ export interface ColorScheme {
 }
 
 export const NEUTRAL_CANVAS = {
-  from: 'from-blue-200',
-  via: 'via-purple-200',
-  to: 'to-pink-200'
+  from: 'from-blue-300',
+  via: 'via-purple-400',
+  to: 'to-pink-400'
 }
 
 export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'orange', ColorScheme> = {
