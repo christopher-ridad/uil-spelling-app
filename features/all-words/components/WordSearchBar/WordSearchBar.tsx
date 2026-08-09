@@ -11,19 +11,19 @@ interface SearchBarProps {
 
 export default function WordSearchBar({ searchTerm, onChange, shown, total }: SearchBarProps) {
   return (
-    <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 mb-6 shadow-lg">
+    <div className="bg-white border border-gray-200 rounded-xl p-4 mb-6 shadow-sm">
       <div className="relative">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/60" />
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
         <input
           type="text"
           placeholder="Search words..."
           value={searchTerm}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full pl-12 pr-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+          className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
         />
       </div>
 
-      <div className="mt-4 text-white/80 text-sm">
+      <div className="mt-4 text-gray-600 text-sm">
         Showing {shown} of {total} words
       </div>
     </div>
