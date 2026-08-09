@@ -11,7 +11,7 @@ interface StatsCardGridProps {
 
 export default function StatsCardGrid({ totalWordsPracticed, overallAccuracy, streak }: StatsCardGridProps) {
     return (
-        <section className="grid grid-cols-1 md:gridcols-4 gap-4 mb-8">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <StatsCard
                 fromColor={COLORS.blue.bgTransitionFrom}
                 toColor={COLORS.blue.bgTransitionTo2 ?? COLORS.blue.bgTransitionTo}

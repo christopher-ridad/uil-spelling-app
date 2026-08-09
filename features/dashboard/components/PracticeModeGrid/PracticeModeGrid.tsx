@@ -7,7 +7,7 @@ import PracticeMode from '../PracticeMode'
 
 export default function PracticeModeGrid() {
     return (
-        <main className="grid grid-cols-2 gap-4">
+        <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <PracticeMode
                 fromColor={COLORS.blue.bgTransitionFrom}
                 toColor={COLORS.blue.bgTransitionTo}
@@ -42,8 +42,8 @@ export default function PracticeModeGrid() {
             <PracticeMode
                 fromColor={COLORS.pink.bgTransitionFrom}
                 toColor={COLORS.pink.bgTransitionTo}
-                buttonText="Practice Test"
-                subText="Timed mode"
+                buttonText="All Words"
+                subText="Browse the full list"
                 href="/dashboard/all-words"
             />
         </main>      
