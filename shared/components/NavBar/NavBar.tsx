@@ -13,7 +13,7 @@ export default function NavBar() {
     const displayName = user?.email?.split('@')[0] ?? 'Guest'
     const initials = displayName.slice(0, 2).toUpperCase()
 
-    const barClass = colors ? `${colors.bg} shadow-lg` : 'bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 border-b border-white/70'
+    const barClass = colors ? `${colors.bg} shadow-lg` : 'bg-gradient-to-r from-blue-100 via-sky-100 to-indigo-100 border-b border-white/70'
     const textClass = colors ? 'text-white' : 'text-gray-900'
     const mutedTextClass = colors ? 'text-white/80' : 'text-gray-500'
     const hoverTextClass = colors ? 'hover:text-white' : 'hover:text-gray-900'
@@ -43,7 +43,7 @@ export default function NavBar() {
                             {displayName}
                         </p>
                     </span>
-                    <figure className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold ring-2 ring-white/50">
+                    <figure className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold ring-2 ring-white/50">
                         {initials}
                     </figure>
                 </span>

@@ -6,7 +6,7 @@ interface PracticeCTAProps {
 
 export default function PracticeCTA({ wordsCount }: PracticeCTAProps) {
     return (
-        <div className="bg-gradient-to-r from-red-600 to-orange-600 rounded-xl p-6 shadow-lg mb-6 text-white">
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-6 shadow-lg mb-6 text-white">
             <div className="flex items-center justify-between">
                 <div>
                     <h3 className="text-2xl font-bold mb-2">
@@ -18,7 +18,7 @@ export default function PracticeCTA({ wordsCount }: PracticeCTAProps) {
                 </div>
                 <Link
                     href="/dashboard/review/practice"
-                    className="bg-white text-red-600 hover:bg-gray-100 font-bold px-8 py-4 rounded-lg transition-all hover:scale-105 shadow-lg"
+                    className="bg-white text-blue-600 hover:bg-gray-100 font-bold px-8 py-4 rounded-lg transition-all hover:scale-105 shadow-lg"
                 >
                     Start Review Session
                 </Link>

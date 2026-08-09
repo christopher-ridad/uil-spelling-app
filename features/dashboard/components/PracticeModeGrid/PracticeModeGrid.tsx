@@ -17,31 +17,31 @@ export default function PracticeModeGrid() {
             />
                 
             <PracticeMode
-                fromColor={COLORS.red.bgTransitionFrom}
-                toColor={COLORS.red.bgTransitionTo}
+                fromColor={COLORS.indigo.bgTransitionFrom}
+                toColor={COLORS.indigo.bgTransitionTo}
                 buttonText="Vocabulary"
                 subText="Flashcards"
                 href="/dashboard/vocab"
             />
 
             <PracticeMode
-                fromColor={COLORS.green.bgTransitionFrom}
-                toColor={COLORS.green.bgTransitionTo}
+                fromColor={COLORS.sky.bgTransitionFrom}
+                toColor={COLORS.sky.bgTransitionTo}
                 buttonText="Word Lists"
                 subText="Identify the misspelled word"
                 href="/dashboard/word-lists"
             />
 
             <PracticeMode
-                fromColor={COLORS.yellow.bgTransitionFrom}
-                toColor={COLORS.yellow.bgTransitionTo}
+                fromColor={COLORS.cyan.bgTransitionFrom}
+                toColor={COLORS.cyan.bgTransitionTo}
                 buttonText="Practice Test"
                 subText="Timed mode"
                 href="/dashboard/mock-test"
             />
             <PracticeMode
-                fromColor={COLORS.pink.bgTransitionFrom}
-                toColor={COLORS.pink.bgTransitionTo}
+                fromColor={COLORS.blue.bgTransitionFrom}
+                toColor={COLORS.blue.bgTransitionTo}
                 buttonText="All Words"
                 subText="Browse the full list"
                 href="/dashboard/all-words"

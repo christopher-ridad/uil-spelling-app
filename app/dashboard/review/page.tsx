@@ -36,7 +36,7 @@ export default function ReviewPage() {
             {/* Header */}
             <div className="mb-8">
                 <div className="flex items-center gap-3 mb-2">
-                    <RotateCcw className="w-10 h-10 text-red-600" />
+                    <RotateCcw className="w-10 h-10 text-blue-600" />
                     <h1 className="text-4xl font-bold text-gray-900">
                         Review Mistakes
                     </h1>

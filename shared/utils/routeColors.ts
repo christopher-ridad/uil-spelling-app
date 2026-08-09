@@ -2,9 +2,9 @@ import { COLORS, ColorScheme } from './colors'
 
 const ROUTE_COLOR_KEY: Record<string, keyof typeof COLORS> = {
   '/dashboard/spelling': 'blue',
-  '/dashboard/vocab': 'red',
-  '/dashboard/word-lists': 'green',
-  '/dashboard/mock-test': 'yellow',
+  '/dashboard/vocab': 'indigo',
+  '/dashboard/word-lists': 'sky',
+  '/dashboard/mock-test': 'cyan',
 }
 
 export function getRouteColors(pathname: string): ColorScheme | null {

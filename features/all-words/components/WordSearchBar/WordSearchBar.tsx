@@ -11,7 +11,7 @@ interface SearchBarProps {
 
 export default function WordSearchBar({ searchTerm, onChange, shown, total }: SearchBarProps) {
   return (
-    <div className="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 border border-white/70 rounded-xl p-4 mb-6 shadow-sm">
+    <div className="bg-gradient-to-br from-blue-100 via-sky-100 to-indigo-100 border border-white/70 rounded-xl p-4 mb-6 shadow-sm">
       <div className="relative">
         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
         <input

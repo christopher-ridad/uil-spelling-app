@@ -11,16 +11,15 @@ export interface ColorScheme {
   bgCanvasTo: string
   bgTransitionFrom: string
   bgTransitionTo: string
-  bgTransitionTo2?: string
 }
 
 export const NEUTRAL_CANVAS = {
-  from: 'from-blue-300',
-  via: 'via-purple-400',
-  to: 'to-pink-400'
+  from: 'from-blue-200',
+  via: 'via-sky-300',
+  to: 'to-indigo-300'
 }
 
-export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'orange', ColorScheme> = {
+export const COLORS: Record<'blue' | 'indigo' | 'sky' | 'cyan', ColorScheme> = {
   blue: {
     bg: 'bg-blue-600',
     bgDark: 'bg-blue-700',
@@ -33,78 +32,48 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgCanvasFrom: 'from-blue-100',
     bgCanvasTo: 'to-blue-200',
     bgTransitionFrom: 'from-blue-500',
-    bgTransitionTo: 'to-cyan-500',
-    bgTransitionTo2: 'to-blue-600'
+    bgTransitionTo: 'to-blue-600'
   },
-  red: {
-    bg: 'bg-red-600',
-    bgDark: 'bg-red-700',
-    bgLight: 'bg-red-50',
-    bgHover: 'hover:bg-red-700',
-    bgFocus: 'focus:border-red-600',
-    bgText: 'text-red-700',
-    bgBorder: 'border-red-200',
-    bgBorder2: 'border-red-500',
-    bgCanvasFrom: 'from-red-100',
-    bgCanvasTo: 'to-red-200',
-    bgTransitionFrom: 'from-red-500',
-    bgTransitionTo: 'to-pink-500'
+  indigo: {
+    bg: 'bg-indigo-600',
+    bgDark: 'bg-indigo-700',
+    bgLight: 'bg-indigo-50',
+    bgHover: 'hover:bg-indigo-700',
+    bgFocus: 'focus:border-indigo-600',
+    bgText: 'text-indigo-700',
+    bgBorder: 'border-indigo-200',
+    bgBorder2: 'border-indigo-500',
+    bgCanvasFrom: 'from-indigo-100',
+    bgCanvasTo: 'to-indigo-200',
+    bgTransitionFrom: 'from-indigo-500',
+    bgTransitionTo: 'to-indigo-600'
   },
-  green: {
-    bg: 'bg-green-600',
-    bgDark: 'bg-green-700',
-    bgLight: 'bg-green-50',
-    bgHover: 'hover:bg-green-700',
-    bgFocus: 'focus:border-green-600',
-    bgText: 'text-green-700',
-    bgBorder: 'border-green-200',
-    bgBorder2: 'border-green-500',
-    bgCanvasFrom: 'from-green-100',
-    bgCanvasTo: 'to-green-200',
-    bgTransitionFrom: 'from-green-500',
-    bgTransitionTo: 'to-teal-500',
-    bgTransitionTo2: 'to-emerald-600'
+  sky: {
+    bg: 'bg-sky-600',
+    bgDark: 'bg-sky-700',
+    bgLight: 'bg-sky-50',
+    bgHover: 'hover:bg-sky-700',
+    bgFocus: 'focus:border-sky-600',
+    bgText: 'text-sky-700',
+    bgBorder: 'border-sky-200',
+    bgBorder2: 'border-sky-500',
+    bgCanvasFrom: 'from-sky-100',
+    bgCanvasTo: 'to-sky-200',
+    bgTransitionFrom: 'from-sky-500',
+    bgTransitionTo: 'to-sky-600'
   },
-  yellow: {
-    bg: 'bg-yellow-500',
-    bgDark: 'bg-yellow-600',
-    bgLight: 'bg-yellow-50',
-    bgHover: 'hover:bg-yellow-600',
-    bgFocus: 'focus:border-yellow-500',
-    bgText: 'text-yellow-600',
-    bgBorder: 'border-yellow-200',
-    bgBorder2: 'border-yellow-500',
-    bgCanvasFrom: 'from-yellow-100',
-    bgCanvasTo: 'to-yellow-200',
-    bgTransitionFrom: 'from-yellow-500',
-    bgTransitionTo: 'to-orange-500'
-  },
-  pink: {
-    bg: 'bg-pink-600',
-    bgDark: 'bg-pink-700',
-    bgLight: 'bg-pink-50',
-    bgHover: 'hover:bg-pink-700',
-    bgFocus: 'focus:border-pink-600',
-    bgText: 'text-pink-700',
-    bgBorder: 'border-pink-200',
-    bgBorder2: 'border-pink-500',
-    bgCanvasFrom: 'from-pink-100',
-    bgCanvasTo: 'to-pink-200',
-    bgTransitionFrom: 'from-purple-500',
-    bgTransitionTo: 'to-pink-500'
-  },
-  orange: {
-    bg: 'bg-orange-600',
-    bgDark: 'bg-orange-700',
-    bgLight: 'bg-orange-50',
-    bgHover: 'hover:bg-orange-700',
-    bgFocus: 'focus:border-orange-600',
-    bgText: 'text-orange-700',
-    bgBorder: 'border-orange-200',
-    bgBorder2: 'border-orange-500',
-    bgCanvasFrom: 'from-orange-100',
-    bgCanvasTo: 'to-orange-200',
-    bgTransitionFrom: 'from-orange-500',
-    bgTransitionTo: 'to-red-500'
+  cyan: {
+    bg: 'bg-cyan-600',
+    bgDark: 'bg-cyan-700',
+    bgLight: 'bg-cyan-50',
+    bgHover: 'hover:bg-cyan-700',
+    bgFocus: 'focus:border-cyan-600',
+    bgText: 'text-cyan-700',
+    bgBorder: 'border-cyan-200',
+    bgBorder2: 'border-cyan-500',
+    bgCanvasFrom: 'from-cyan-100',
+    bgCanvasTo: 'to-cyan-200',
+    bgTransitionFrom: 'from-cyan-500',
+    bgTransitionTo: 'to-cyan-600'
   }
 }

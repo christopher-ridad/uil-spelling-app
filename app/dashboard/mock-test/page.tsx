@@ -74,7 +74,7 @@ export default function MockTestPage() {
         <main className="flex-1 flex items-center justify-center p-6">
             <FlippableSpellingCard
                 key={key}
-                colors={COLORS.yellow}
+                colors={COLORS.cyan}
                 headerText="Mock Test"
                 score_correct={0}
                 score_total={1}
