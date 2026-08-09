@@ -6,7 +6,7 @@ interface ReviewEmptyStateProps {
 
 export default function ReviewEmptyState({ minAccuracy }: ReviewEmptyStateProps) {
     return (
-        <div className="bg-white rounded-xl p-12 text-center shadow-lg">
+        <div className="bg-gradient-to-br from-blue-100 via-sky-100 to-indigo-100 border border-white/70 rounded-xl p-12 text-center shadow-sm">
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-4xl">🎉</span>
             </div>

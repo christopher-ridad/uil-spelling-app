@@ -26,9 +26,9 @@ export default function RecentWordBox({}) {
     if (loading) {
         return (
         <div className="space-y-6">
-            <section className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg">
-            <h3 className="text-xl font-bold text-white mb-4">Recent Activity 📝</h3>
-            <p className="text-white/70">Loading...</p>
+            <section className="bg-white/50 backdrop-blur-sm border border-white/50 rounded-xl p-6 shadow-sm">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Recent Activity 📝</h3>
+            <p className="text-gray-500">Loading...</p>
             </section>
         </div>
         )
@@ -36,11 +36,11 @@ export default function RecentWordBox({}) {
 
     return (
         <div className="space-y-6">
-            <section className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-white mb-4">Recent Activity 📝</h3>
+            <section className="bg-white/50 backdrop-blur-sm border border-white/50 rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Recent Activity 📝</h3>
                 <div className="space-y-3">
                     {recentWords.length === 0 ? (
-                        <p className="text-white/70 text-center py-4">
+                        <p className="text-gray-500 text-center py-4">
                             No words practiced yet. Start practicing!
                         </p>
                     ) : (

@@ -4,7 +4,7 @@ import QuickAction from '../QuickAction'
 
 export default function QuickActions ({}) {
     return (
-        <section className="grid grid-cols-1 gap-4">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <QuickAction 
                 label="Continue Practice"
                 helperText="Pick up where you left off"

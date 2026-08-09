@@ -56,25 +56,25 @@ export default function SpellingPage() {
 
     if (authLoading || !user) {
         return (
-            <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-600 to-cyan-500">
-                <p className="text-white text-2xl">Loading...</p>
+            <div className="flex-1 flex items-center justify-center">
+                <p className="text-gray-600 text-2xl">Loading...</p>
             </div>
         )
     }
 
     if (loading || !currentWord) {
         return (
-            <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-600 to-cyan-500">
-                <p className="text-white text-2xl">Loading word...</p>
+            <div className="flex-1 flex items-center justify-center">
+                <p className="text-gray-600 text-2xl">Loading word...</p>
             </div>
         )
     }
 
     return (
-        <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-600 to-cyan-500">
+        <main className="flex-1 flex items-center justify-center p-6">
             <FlippableSpellingCard
                 key={key}
-                colors={COLORS.blue}
+                colors={COLORS.sky}
                 headerText="Spelling Practice"
                 score_correct={0}
                 score_total={1}

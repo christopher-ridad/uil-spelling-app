@@ -8,7 +8,7 @@ interface WordOptionProps {
 
 export default function WordOption({ color, colorHover, word }: WordOptionProps) {
     return (
-        <button className={`p-4 rounded-lg text-white text-center text-lg ${color} ${colorHover} cursor-pointer transition-all hover:scale-105 hover:shadow-2xl group`}>
+        <button className={`p-4 rounded-lg text-white text-center text-lg ${color} ${colorHover} cursor-pointer transition-all hover:scale-105 hover:shadow-2xl active:scale-95 group`}>
             {word}
         </button>
     )

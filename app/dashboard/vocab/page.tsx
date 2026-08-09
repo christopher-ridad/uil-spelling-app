@@ -19,7 +19,7 @@ export default function VocabPage() {
         const currentWord = words[currentWordIndex];
 
     return (
-        <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-red-500 to-red-300">
+        <main className="flex-1 flex items-center justify-center p-6">
             <section className="max-w-2xl w-full px-4">
                 <VocabCard 
                     key={currentWordIndex}
@@ -28,7 +28,7 @@ export default function VocabPage() {
                     definition={currentWord.definition}
                     partOfSpeech={currentWord.partOfSpeech}
                     example={currentWord.example}
-                    colors={COLORS.red}
+                    colors={COLORS.sky}
                     score_correct={0}
                     score_total={1}
                     onNext={handleNext}

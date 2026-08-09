@@ -11,10 +11,10 @@ interface FilterProps {
 
 export default function AlphabetFilter({ value, onChange }: FilterProps) {
   return (
-    <section className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 mb-6 shadow-lg">
+    <section className="bg-gradient-to-br from-blue-100 via-sky-100 to-indigo-100 border border-white/70 rounded-xl p-4 mb-6 shadow-sm">
       <article className="flex items-center gap-2 mb-3">
-        <Filter className="w-5 h-5 text-white" />
-        <span className="text-white font-semibold">Filter by letter:</span>
+        <Filter className="w-5 h-5 text-gray-700" />
+        <span className="text-gray-900 font-semibold">Filter by letter:</span>
       </article>
 
       <article className="flex flex-wrap gap-2">
@@ -22,8 +22,8 @@ export default function AlphabetFilter({ value, onChange }: FilterProps) {
           onClick={() => onChange('all')}
           className={`px-3 py-2 rounded-lg font-semibold transition-all ${
             value === 'all'
-              ? 'bg-white text-purple-600 shadow-lg'
-              : 'bg-white/20 text-white hover:bg-white/30'
+              ? 'bg-gray-900 text-white shadow-sm'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
           }`}
         >
           All
@@ -35,8 +35,8 @@ export default function AlphabetFilter({ value, onChange }: FilterProps) {
             onClick={() => onChange(letter)}
             className={`w-10 h-10 rounded-lg font-semibold transition-all ${
               value === letter
-                ? 'bg-white text-purple-600 shadow-lg'
-                : 'bg-white/20 text-white hover:bg-white/30'
+                ? 'bg-gray-900 text-white shadow-sm'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
           >
             {letter}

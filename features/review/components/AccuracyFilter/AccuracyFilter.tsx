@@ -8,7 +8,7 @@ interface AccuracyFilterProps {
 
 export default function AccuracyFilter({ minAccuracy, onChange, wordsCount }: AccuracyFilterProps) {
     return (
-        <div className="bg-white rounded-xl p-6 shadow-lg mb-6">
+        <div className="bg-gradient-to-br from-blue-100 via-sky-100 to-indigo-100 border border-white/70 rounded-xl p-6 shadow-sm mb-6">
             <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Show words with accuracy below:
             </label>
@@ -19,7 +19,7 @@ export default function AccuracyFilter({ minAccuracy, onChange, wordsCount }: Ac
                         onClick={() => onChange(threshold)}
                         className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                             minAccuracy === threshold
-                                ? 'bg-red-600 text-white'
+                                ? 'bg-blue-600 text-white'
                                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                         }`}
                     >
