@@ -4,6 +4,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/shared/contexts/AuthContext'
+import { COLORS } from '@/shared/utils/colors'
 import AuthForm, { AuthFormValues } from '@/shared/components/AuthForm'
 
 export default function SignupPage() {
@@ -49,7 +50,7 @@ export default function SignupPage() {
       footerText="Already have an account?"
       footerLinkText="Login"
       footerHref="/login"
-      gradientClassName="from-blue-600 to-cyan-500"
+      gradientClassName={`${COLORS.blue.bgCanvasFrom} ${COLORS.blue.bgCanvasTo}`}
       onSubmit={handleSignup}
     />
   )

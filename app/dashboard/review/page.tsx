@@ -25,14 +25,14 @@ export default function ReviewPage() {
 
     if (loading) {
         return (
-            <div className="flex items-center justify-center min-h-screen">
+            <div className="flex-1 flex items-center justify-center">
                 <p className="text-2xl text-gray-600">Loading words to review...</p>
             </div>
         )
     }
 
     return (
-        <div>
+        <div className="p-6">
             {/* Header */}
             <div className="mb-8">
                 <div className="flex items-center gap-3 mb-2">

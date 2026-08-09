@@ -2,7 +2,6 @@
 
 import useSWR from 'swr'
 import { useAuth } from '@/shared/contexts/AuthContext'
-import NavBar from '@/shared/components/NavBar'
 import WelcomeBox from '@/features/dashboard/components/WelcomeBox'
 import StatsCardGrid from '@/features/dashboard/components/StatsCardGrid'
 import PracticeModeBox from '@/features/dashboard/components/PracticeModeBox'
@@ -44,8 +43,7 @@ export default function Page() {
   }
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-violet-600 via-purple-600 to-pink-500">
-        <NavBar />
+      <div>
         <div className="px-6 pt-8">
           <WelcomeBox userName={user?.email?.split('@')[0] ?? 'Guest'} streak={stats.streak}/>
         </div>

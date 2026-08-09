@@ -37,7 +37,7 @@ export default function LoginPage() {
       footerText="Don't have an account?"
       footerLinkText="Sign up"
       footerHref="/signup"
-      gradientClassName={`${COLORS.blue.bgTransitionFrom} ${COLORS.blue.bgTransitionTo}`}
+      gradientClassName={`${COLORS.blue.bgCanvasFrom} ${COLORS.blue.bgCanvasTo}`}
       onSubmit={handleLogin}
     />
   )

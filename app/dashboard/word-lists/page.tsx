@@ -40,7 +40,7 @@ export default function WordListPage() {
 
     
     return (
-        <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-green-600 to-teal-300">
+        <main className="flex-1 flex items-center justify-center p-6">
             <MisspellCardFront
                 colors={COLORS.green}
                 headerText="Word Lists"
