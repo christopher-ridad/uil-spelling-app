@@ -7,16 +7,9 @@ import { recordWordAttempt } from '@/shared/services/recordWordAttempt'
 import { useRouter } from 'next/navigation'
 import { COLORS } from '@/shared/utils/colors'
 import FlippableSpellingCard from '@/features/spelling/components/FlippableSpellingCard'
+import { WordDefinition } from '@/shared/models/WordDefinition'
 
-interface WordData {
-    word: string
-    definition: string
-    partOfSpeech: string
-    example: string
-    source?: string
-}
-
-async function fetchRandomWord(): Promise<WordData> {
+async function fetchRandomWord(): Promise<WordDefinition> {
     const res = await fetch('/api/words?random=true')
     return res.json()
 }

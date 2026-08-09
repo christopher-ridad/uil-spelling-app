@@ -15,7 +15,7 @@ export async function recordWordAttempt(
             word,
             was_correct: wasCorrect,
             user_answer: userAnswer,
-            session_id: sessionId,
+            session_id: sessionId ?? null,
         })
 
     if (attemptError) throw attemptError

@@ -1,10 +1,5 @@
 import { supabase } from '@/shared/utils/supabase'
-
-interface WordProgress {
-  attempts: number
-  correct_attempts: number
-  last_practiced: string
-}
+import { WordProgressRow } from '@/shared/models/WordProgressRow'
 
 export async function getAllWordsWithProgress(userId: string) {
   const { data, error } = await supabase
@@ -15,7 +10,7 @@ export async function getAllWordsWithProgress(userId: string) {
   if (error) throw error
 
   // Convert array to map for easy lookup
-  const progressMap: Record<string, WordProgress> = {}
+  const progressMap: Record<string, WordProgressRow> = {}
   data.forEach(item => {
     progressMap[item.word] = item
   })

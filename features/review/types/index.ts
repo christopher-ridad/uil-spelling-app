@@ -1,7 +1,5 @@
-export interface WordToReview {
-    word: string
-    attempts: number
-    correct_attempts: number
+import { WordProgressRow } from '@/shared/models/WordProgressRow'
+
+export type WordToReview = WordProgressRow & {
     accuracy: number
-    last_practiced: string
 }

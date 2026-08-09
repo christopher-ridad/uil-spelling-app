@@ -1,14 +1,11 @@
 'use client'
 
 import WordCard from '../WordCard'
+import { WordProgressRow } from '@/shared/models/WordProgressRow'
 
 interface WordGridProps {
   words: string[]
-  progressMap: Record<string, {
-    attempts: number
-    correct_attempts: number
-    last_practiced: string
-  }>
+  progressMap: Record<string, WordProgressRow>
   allWords: string[]
 }
 
