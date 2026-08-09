@@ -16,7 +16,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     <div className={`min-h-screen flex flex-col bg-gradient-to-br ${canvasClass}`}>
       <NavBar />
       <main className="flex-1 flex flex-col">
-        <div className="w-full max-w-7xl mx-auto flex-1 flex flex-col">
+        <div className="w-full max-w-[1600px] mx-auto flex-1 flex flex-col">
           {children}
         </div>
       </main>

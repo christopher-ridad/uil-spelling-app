@@ -10,7 +10,7 @@ type Status = 'correct' | 'incorrect'
 
 export default function Word2({ word, date, status }: Word2Props) {
     return (
-        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+        <div className="flex items-center justify-between p-3 bg-white/30 rounded-lg border border-white/40">
             <article>
                 <p className="font-semibold text-gray-900 font-mono">{word}</p>
                 <p className="text-xs text-gray-500">{date}</p>
