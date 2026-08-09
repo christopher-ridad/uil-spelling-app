@@ -7,6 +7,7 @@ import StatsCardGrid from '@/features/dashboard/components/StatsCardGrid'
 import PracticeModeBox from '@/features/dashboard/components/PracticeModeBox'
 import RecentWordBox from '@/features/dashboard/components/RecentWordBox'
 import QuickActionGrid from '@/features/dashboard/components/QuickActionGrid'
+import ScrollReveal from '@/shared/components/ScrollReveal'
 import { getDashboardStats } from '@/features/dashboard/services/getDashboardStats'
 
 interface DashboardStats {
@@ -44,25 +45,25 @@ export default function Page() {
 
     return (
       <div>
-        <div className="px-6 pt-8">
+        <ScrollReveal className="px-6 pt-8">
           <WelcomeBox userName={user?.email?.split('@')[0] ?? 'Guest'} streak={stats.streak}/>
-        </div>
-        <div className="px-6">
+        </ScrollReveal>
+        <ScrollReveal className="px-6">
           <StatsCardGrid
             totalWordsPracticed={stats.totalWordsPracticed}
             overallAccuracy={stats.overallAccuracy}
             streak={stats.streak}
           />
-        </div>
-        <div className="px-6 pb-8">
+        </ScrollReveal>
+        <ScrollReveal className="px-6 pb-8">
           <QuickActionGrid />
-        </div>
-        <div className="px-6">
+        </ScrollReveal>
+        <ScrollReveal className="px-6">
           <PracticeModeBox />
-        </div>
-        <div className="px-6 py-8">
+        </ScrollReveal>
+        <ScrollReveal className="px-6 py-8">
           <RecentWordBox />
-        </div>
+        </ScrollReveal>
       </div>
     )
 }
