@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import Definition from '../Definition'
 import Word from '../Word'
 import PartOfSpeech from '../PartOfSpeech'

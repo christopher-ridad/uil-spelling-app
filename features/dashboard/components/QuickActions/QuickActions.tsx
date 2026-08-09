@@ -1,7 +1,6 @@
 'use client'
 
 import QuickAction from '../QuickAction'
-import { BookOpen, RotateCcw, List, Trophy } from 'lucide-react'
 
 export default function QuickActions ({}) {
     return (
