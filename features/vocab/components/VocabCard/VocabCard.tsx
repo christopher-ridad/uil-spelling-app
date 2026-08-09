@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import CardHeader from '@/shared/components/CardHeader'
 import WordCardBack from '@/shared/components/WordCardBack'
 

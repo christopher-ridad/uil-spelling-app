@@ -1,6 +1,5 @@
 'use client'
 
-import { ChevronRight } from 'lucide-react'
 import BookOpenIcon from '@/shared/components/BookOpenIcon'
 
 interface QuickActionProps {

@@ -7,39 +7,35 @@ import MisspellCardFront from '@/features/word-lists/components/MisspellCardFron
 export default function WordListPage() {
     const [randomWords, setRandomWords ] = useState<string[]>([])
 
-    const loadRandomWord = async () => {
-        try {
-            const res = await fetch('/api/words?random=true')
-
-            if (!res.ok) {
-                throw new Error('Failed to fetch word')
-            }
-            
-            // parse response as json
-            const data = await res.json()
-
-            return data.word
-        } catch(err) {
-            console.error('Error loading word:', err)
-            return null
-        }
-    }
-    
-    const loadRandomWords = async () => {
-        const loadedRandomWords = new Set<string>
-        while (loadedRandomWords.size < 5) { 
-            const randomWord = await loadRandomWord()
-            loadedRandomWords.add(randomWord)
-        }
-        return [...loadedRandomWords]
-    }
-
     useEffect(() => {
-        const fetchWords = async () => {
-            const words = await loadRandomWords()
-            setRandomWords(words)
+        const loadRandomWord = async () => {
+            try {
+                const res = await fetch('/api/words?random=true')
+
+                if (!res.ok) {
+                    throw new Error('Failed to fetch word')
+                }
+
+                // parse response as json
+                const data = await res.json()
+
+                return data.word
+            } catch(err) {
+                console.error('Error loading word:', err)
+                return null
+            }
         }
-        fetchWords()
+
+        const loadRandomWords = async () => {
+            const loadedRandomWords = new Set<string>
+            while (loadedRandomWords.size < 5) {
+                const randomWord = await loadRandomWord()
+                loadedRandomWords.add(randomWord)
+            }
+            return [...loadedRandomWords]
+        }
+
+        loadRandomWords().then(setRandomWords)
     }, [])
 
     
