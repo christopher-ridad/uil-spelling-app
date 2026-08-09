@@ -7,9 +7,16 @@ export interface ColorScheme {
   bgText: string
   bgBorder: string
   bgBorder2: string
+  bgCanvasFrom: string
+  bgCanvasTo: string
   bgTransitionFrom: string
   bgTransitionTo: string
   bgTransitionTo2?: string
+}
+
+export const NEUTRAL_CANVAS = {
+  from: 'from-gray-50',
+  to: 'to-white'
 }
 
 export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'orange', ColorScheme> = {
@@ -19,9 +26,11 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgLight: 'bg-blue-50',
     bgHover: 'hover:bg-blue-700',
     bgFocus: 'focus:border-blue-600',
-    bgText: 'text-blue-600',
-    bgBorder: 'border-blue-300',
+    bgText: 'text-blue-700',
+    bgBorder: 'border-blue-200',
     bgBorder2: 'border-blue-500',
+    bgCanvasFrom: 'from-blue-50',
+    bgCanvasTo: 'to-blue-100',
     bgTransitionFrom: 'from-blue-500',
     bgTransitionTo: 'to-cyan-500',
     bgTransitionTo2: 'to-blue-600'
@@ -32,9 +41,11 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgLight: 'bg-red-50',
     bgHover: 'hover:bg-red-700',
     bgFocus: 'focus:border-red-600',
-    bgText: 'text-red-600',
-    bgBorder: 'border-red-300',
+    bgText: 'text-red-700',
+    bgBorder: 'border-red-200',
     bgBorder2: 'border-red-500',
+    bgCanvasFrom: 'from-red-50',
+    bgCanvasTo: 'to-red-100',
     bgTransitionFrom: 'from-red-500',
     bgTransitionTo: 'to-pink-500'
   },
@@ -44,9 +55,11 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgLight: 'bg-green-50',
     bgHover: 'hover:bg-green-700',
     bgFocus: 'focus:border-green-600',
-    bgText: 'text-green-600',
-    bgBorder: 'border-green-300',
+    bgText: 'text-green-700',
+    bgBorder: 'border-green-200',
     bgBorder2: 'border-green-500',
+    bgCanvasFrom: 'from-green-50',
+    bgCanvasTo: 'to-green-100',
     bgTransitionFrom: 'from-green-500',
     bgTransitionTo: 'to-teal-500',
     bgTransitionTo2: 'to-emerald-600'
@@ -57,9 +70,11 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgLight: 'bg-yellow-50',
     bgHover: 'hover:bg-yellow-600',
     bgFocus: 'focus:border-yellow-500',
-    bgText: 'text-yellow-500',
-    bgBorder: 'border-yellow-300',
+    bgText: 'text-yellow-600',
+    bgBorder: 'border-yellow-200',
     bgBorder2: 'border-yellow-500',
+    bgCanvasFrom: 'from-yellow-50',
+    bgCanvasTo: 'to-yellow-100',
     bgTransitionFrom: 'from-yellow-500',
     bgTransitionTo: 'to-orange-500'
   },
@@ -69,9 +84,11 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgLight: 'bg-pink-50',
     bgHover: 'hover:bg-pink-700',
     bgFocus: 'focus:border-pink-600',
-    bgText: 'text-pink-600',
-    bgBorder: 'border-pink-300',
+    bgText: 'text-pink-700',
+    bgBorder: 'border-pink-200',
     bgBorder2: 'border-pink-500',
+    bgCanvasFrom: 'from-pink-50',
+    bgCanvasTo: 'to-pink-100',
     bgTransitionFrom: 'from-purple-500',
     bgTransitionTo: 'to-pink-500'
   },
@@ -81,9 +98,11 @@ export const COLORS: Record<'blue' | 'red' | 'green' | 'yellow' | 'pink' | 'oran
     bgLight: 'bg-orange-50',
     bgHover: 'hover:bg-orange-700',
     bgFocus: 'focus:border-orange-600',
-    bgText: 'text-orange-600',
-    bgBorder: 'border-orange-300',
+    bgText: 'text-orange-700',
+    bgBorder: 'border-orange-200',
     bgBorder2: 'border-orange-500',
+    bgCanvasFrom: 'from-orange-50',
+    bgCanvasTo: 'to-orange-100',
     bgTransitionFrom: 'from-orange-500',
     bgTransitionTo: 'to-red-500'
   }
