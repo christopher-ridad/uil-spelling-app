@@ -9,16 +9,16 @@ export default function PracticeModeGrid() {
     return (
         <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <PracticeMode
-                fromColor={COLORS.blue.bgTransitionFrom}
-                toColor={COLORS.blue.bgTransitionTo}
+                fromColor={COLORS.sky.bgTransitionFrom}
+                toColor={COLORS.sky.bgTransitionTo}
                 buttonText="Spelling Practice"
                 subText="Listen & type"
                 href="/dashboard/spelling"
             />
-                
+
             <PracticeMode
-                fromColor={COLORS.indigo.bgTransitionFrom}
-                toColor={COLORS.indigo.bgTransitionTo}
+                fromColor={COLORS.sky.bgTransitionFrom}
+                toColor={COLORS.sky.bgTransitionTo}
                 buttonText="Vocabulary"
                 subText="Flashcards"
                 href="/dashboard/vocab"
@@ -33,15 +33,15 @@ export default function PracticeModeGrid() {
             />
 
             <PracticeMode
-                fromColor={COLORS.cyan.bgTransitionFrom}
-                toColor={COLORS.cyan.bgTransitionTo}
+                fromColor={COLORS.sky.bgTransitionFrom}
+                toColor={COLORS.sky.bgTransitionTo}
                 buttonText="Practice Test"
                 subText="Timed mode"
                 href="/dashboard/mock-test"
             />
             <PracticeMode
-                fromColor={COLORS.blue.bgTransitionFrom}
-                toColor={COLORS.blue.bgTransitionTo}
+                fromColor={COLORS.sky.bgTransitionFrom}
+                toColor={COLORS.sky.bgTransitionTo}
                 buttonText="All Words"
                 subText="Browse the full list"
                 href="/dashboard/all-words"

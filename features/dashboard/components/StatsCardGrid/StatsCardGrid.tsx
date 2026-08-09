@@ -13,8 +13,8 @@ export default function StatsCardGrid({ totalWordsPracticed, overallAccuracy, st
     return (
         <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <StatsCard
-                fromColor={COLORS.blue.bgTransitionFrom}
-                toColor={COLORS.blue.bgTransitionTo}
+                fromColor={COLORS.indigo.bgTransitionFrom}
+                toColor={COLORS.indigo.bgTransitionTo}
                 title="Words Practiced"
                 stats={totalWordsPracticed}
                 subStats="out of 1,500"
@@ -29,8 +29,8 @@ export default function StatsCardGrid({ totalWordsPracticed, overallAccuracy, st
                 isAccuracy={true}
             />
             <StatsCard
-                fromColor={COLORS.sky.bgTransitionFrom}
-                toColor={COLORS.sky.bgTransitionTo}
+                fromColor={COLORS.indigo.bgTransitionFrom}
+                toColor={COLORS.indigo.bgTransitionTo}
                 title="Practice Streak"
                 stats={streak}
                 subStats={`${streak == 1 ? 'day' : 'days'} in a row 🔥`}
