@@ -7,7 +7,7 @@ interface WelcomeBox {
 
 export default function WelcomeBox({ userName, streak }: WelcomeBox) {
     return (
-        <section className="mb-8 bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-white/50 shadow-sm">
+        <section className="mb-8 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 rounded-2xl p-6 border border-white/70 shadow-sm">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
                 Welcome back, {userName}! 👋
             </h2>

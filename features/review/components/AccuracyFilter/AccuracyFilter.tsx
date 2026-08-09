@@ -8,7 +8,7 @@ interface AccuracyFilterProps {
 
 export default function AccuracyFilter({ minAccuracy, onChange, wordsCount }: AccuracyFilterProps) {
     return (
-        <div className="bg-white/50 backdrop-blur-sm border border-white/50 rounded-xl p-6 shadow-sm mb-6">
+        <div className="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 border border-white/70 rounded-xl p-6 shadow-sm mb-6">
             <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Show words with accuracy below:
             </label>
