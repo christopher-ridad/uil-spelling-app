@@ -18,7 +18,7 @@ export default function StatsInfo({ title, stats, subStats, isAccuracy }: StatsI
             <div className="w-12 h-12 bg-white/20 p-2 rounded-lg">
                 <BookOpenIcon />
             </div>
-            <h3 className="text-xs uppercase tracking-wide text-white/60">
+            <h3 className="text-xs uppercase tracking-wide text-white/80">
                 {title}
             </h3>
             <p className="text-4xl font-semibold leading-none text-white">
@@ -29,7 +29,7 @@ export default function StatsInfo({ title, stats, subStats, isAccuracy }: StatsI
                     </span>
                 )}
             </p>
-            <p className="text-sm text-white/70">
+            <p className="text-sm text-white/80">
                 {subStats}
             </p>
         </article>

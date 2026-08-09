@@ -17,8 +17,8 @@ interface ScatteredWord {
     sizeClass: string
 }
 
-const SIZE_CLASSES = ['text-2xl', 'text-3xl', 'text-4xl', 'text-5xl']
-const WORD_COUNT = 14
+const SIZE_CLASSES = ['text-xs', 'text-sm', 'text-base', 'text-lg']
+const WORD_COUNT = 40
 
 export default function WordBackground() {
     const { data: allWords } = useSWR('all-words', fetchAllWords)
@@ -42,7 +42,7 @@ export default function WordBackground() {
             {scattered.map((item, i) => (
                 <span
                     key={i}
-                    className={`absolute font-mono font-bold text-blue-900/5 ${item.sizeClass}`}
+                    className={`absolute font-mono font-bold text-blue-900/20 ${item.sizeClass}`}
                     style={{ top: item.top, left: item.left, transform: `rotate(${item.rotate}deg)` }}
                 >
                     {item.word}
