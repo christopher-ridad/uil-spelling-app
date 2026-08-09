@@ -74,7 +74,7 @@ export default function SpellingPage() {
         <main className="flex-1 flex items-center justify-center p-6">
             <FlippableSpellingCard
                 key={key}
-                colors={COLORS.blue}
+                colors={COLORS.sky}
                 headerText="Spelling Practice"
                 score_correct={0}
                 score_total={1}

@@ -28,7 +28,7 @@ export default function VocabPage() {
                     definition={currentWord.definition}
                     partOfSpeech={currentWord.partOfSpeech}
                     example={currentWord.example}
-                    colors={COLORS.indigo}
+                    colors={COLORS.sky}
                     score_correct={0}
                     score_total={1}
                     onNext={handleNext}
