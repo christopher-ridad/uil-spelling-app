@@ -7,8 +7,8 @@ import { supabase } from '@/shared/utils/supabase'
 interface AuthContextType {
     user: User | null
     loading: boolean
-    signUp: (email: string, password: string) => Promise<any>
-    signIn: (email: string, password: string) => Promise<any>
+    signUp: (email: string, password: string) => ReturnType<typeof supabase.auth.signUp>
+    signIn: (email: string, password: string) => ReturnType<typeof supabase.auth.signInWithPassword>
     signOut: () => Promise<void>
 }
 
@@ -36,13 +36,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const value = {
         user,
         loading,
-        signUp: async (email: string, password: string) => {
-            const { data, error } = await supabase.auth.signUp({ email, password })
-            return { data, error }
+        signUp: (email: string, password: string) => {
+            return supabase.auth.signUp({ email, password })
         },
-        signIn: async (email: string, password: string) => {
-            const { data, error } = await supabase.auth.signInWithPassword({ email, password })
-            return { data, error }
+        signIn: (email: string, password: string) => {
+            return supabase.auth.signInWithPassword({ email, password })
         },
         signOut: async () => {
             await supabase.auth.signOut()
