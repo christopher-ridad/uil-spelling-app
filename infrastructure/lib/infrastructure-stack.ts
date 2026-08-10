@@ -58,7 +58,6 @@ export class InfrastructureStack extends cdk.Stack {
       handler: 'index.lambda_handler',
       code: lambda.Code.fromAsset(path.join(__dirname, '../lambda/worker')),
       timeout: cdk.Duration.seconds(60),
-      memorySize: 128,
       layers: [lambda.LayerVersion.fromLayerVersionArn(this, 'GeminiLayerForWorker', GEMINI_LAYER_ARN)],
       environment: {
         SUPABASE_URL: supabaseUrl,
@@ -91,7 +90,6 @@ export class InfrastructureStack extends cdk.Stack {
       handler: 'index.lambda_handler',
       code: lambda.Code.fromAsset(path.join(__dirname, '../lambda/dispatcher')),
       timeout: cdk.Duration.seconds(30),
-      memorySize: 128,
       environment: {
         QUEUE_URL: queue.queueUrl,
         SUPABASE_URL: supabaseUrl,

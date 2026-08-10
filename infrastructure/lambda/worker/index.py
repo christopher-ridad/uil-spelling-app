@@ -15,7 +15,6 @@
 import json
 import os
 import urllib.request
-import urllib.error
 import boto3
 import google.genai as genai
 
