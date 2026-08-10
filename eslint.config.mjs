@@ -20,6 +20,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Self-contained CDK project with its own lint/build - not part of the Next.js app.
+    "infrastructure/**",
   ]),
 ]);
 

@@ -1,0 +1,12 @@
+*.js
+!jest.config.js
+*.d.ts
+node_modules
+__pycache__/
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+# local config - see .env.example
+.env
